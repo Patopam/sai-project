@@ -4,6 +4,8 @@ import MyUser, { Attribute } from './Components/user/user';
 
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
+	currentUserIndex: number = 0;
+
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -20,9 +22,8 @@ class AppContainer extends HTMLElement {
 	}
 	render() {
 		if (this.shadowRoot) {
-			this.users.forEach((user) => {
-				this.shadowRoot?.appendChild(user);
-			});
+			this.shadowRoot.innerHTML = '';
+			this.shadowRoot.appendChild(this.users[this.currentUserIndex]);
 		}
 	}
 }

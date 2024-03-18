@@ -40,13 +40,25 @@ class user extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-			<link rel="stylesheet" href="../user/user.css">
-      		<section>
-      			<section class="top">
+			<link rel="stylesheet" href="../src/Components/user/user.css" />
+			<section class= "user">
+      			<div class="top">
       			<img src="${this.image}"></img>
       			<h1>${this.name}</h1>
       			<h2>${this.username}</h2>
-      			</section>
+      			</div>
+						<section class="bottom">
+						<div class="following">
+						<h1>514</h1>
+						<h2>Following</h2>
+						</div>
+						<div class="follower">
+						<h1>1020</h1>
+						<h2>Followers</h2>
+						</div>
+						<nav class="myProfile">My Profle</nav>
+
+						</section>
 
             </section>
             `;
