@@ -14,6 +14,9 @@ class AppContainer extends HTMLElement {
 			UserCard.setAttribute(Attribute.name, user.name);
 			UserCard.setAttribute(Attribute.image, user.image);
 			UserCard.setAttribute(Attribute.username, user.username);
+			UserCard.setAttribute(Attribute.following, String(user.following));
+			UserCard.setAttribute(Attribute.followers, String(user.followers));
+
 			this.users.push(UserCard);
 		});
 	}
