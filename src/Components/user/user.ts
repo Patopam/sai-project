@@ -2,12 +2,16 @@ export enum Attribute {
 	'image' = 'image',
 	'name' = 'name',
 	'username' = 'username',
+	'followers' = 'followers',
+	'following' = 'following',
 }
 
 class user extends HTMLElement {
 	name?: string;
 	image?: string;
 	username?: string;
+	following?: number;
+	followers?: number;
 
 	constructor() {
 		super();
@@ -19,6 +23,8 @@ class user extends HTMLElement {
 			name: null,
 			image: null,
 			username: null,
+			followers: null,
+			following: null,
 		};
 
 		return Object.keys(attrs);
@@ -30,6 +36,13 @@ class user extends HTMLElement {
 
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
+			case Attribute.following:
+				this.following = newValue ? Number(newValue) : undefined;
+				break;
+			case Attribute.followers:
+				this.followers = newValue ? Number(newValue) : undefined;
+				break;
+
 			default:
 				this[propName] = newValue;
 				break;
@@ -40,13 +53,25 @@ class user extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-			<link rel="stylesheet" href="../user/user.css">
-      		<section>
-      			<section class="top">
+			<link rel="stylesheet" href="../src/Components/user/user.css" />
+			<section class= "user">
+      			<div class="top">
       			<img src="${this.image}"></img>
       			<h1>${this.name}</h1>
       			<h2>${this.username}</h2>
-      			</section>
+      			</div>
+						<section class="bottom">
+						<div class="following">
+						<h1>${this.following}</h1>
+						<h2>Following</h2>
+						</div>
+						<div class="follower">
+						<h1>${this.followers}</h1>
+						<h2>Followers</h2>
+						</div>
+						<nav class="myProfile">My Profle</nav>
+
+						</section>
 
             </section>
             `;

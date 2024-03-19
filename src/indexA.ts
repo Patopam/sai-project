@@ -4,6 +4,8 @@ import MyUser, { Attribute } from './Components/user/user';
 
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
+	currentUserIndex: number = 0;
+
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -12,6 +14,9 @@ class AppContainer extends HTMLElement {
 			UserCard.setAttribute(Attribute.name, user.name);
 			UserCard.setAttribute(Attribute.image, user.image);
 			UserCard.setAttribute(Attribute.username, user.username);
+			UserCard.setAttribute(Attribute.following, String(user.following));
+			UserCard.setAttribute(Attribute.followers, String(user.followers));
+
 			this.users.push(UserCard);
 		});
 	}
@@ -20,9 +25,8 @@ class AppContainer extends HTMLElement {
 	}
 	render() {
 		if (this.shadowRoot) {
-			this.users.forEach((user) => {
-				this.shadowRoot?.appendChild(user);
-			});
+			this.shadowRoot.innerHTML = '';
+			this.shadowRoot.appendChild(this.users[this.currentUserIndex]);
 		}
 	}
 }
