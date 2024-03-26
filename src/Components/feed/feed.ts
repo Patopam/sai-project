@@ -25,6 +25,7 @@ class feed extends HTMLElement {
 	}
 
 	connectedCallback() {
+			
 		this.render();
 	}
 
@@ -37,13 +38,16 @@ class feed extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../src/Components/feed/feed.css">
-            <div class="componente">
-                <div class="info">
-                    <img src="${this.image}" class="imagen-usuario"></img>
-                    <p>${this.username}</p>
-                </div>
-                <img class="imagen-post" src="${this.postimage}"></img>
-            </div>
+				<section class="hijo">
+					<div class="componente">
+						<div class="info">
+							<img src="${this.image}" class="imagen-usuario"></img>
+							<p>${this.username}</p>
+						</div>
+						<img class="imagen-post" src="${this.postimage}"></img>
+						<i class="fa fa-heart" id="icono-me-gusta"></i>
+					</div>
+				</section>
             `;
 		}
 	}

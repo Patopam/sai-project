@@ -1,0 +1,14 @@
+.fondo{
+   
+    background-color: #25245E;
+    border-radius: 20px;
+    position: absolute;
+    width: 328px;
+    height: 325px;
+    left: 32px;
+    top: 601px;
+    display: grid;
+    align-items: start;
+}
+
+    

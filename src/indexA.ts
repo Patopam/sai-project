@@ -8,7 +8,7 @@ class AppContainer extends HTMLElement {
 	feeds: MyFeed[]=[];
 	followers: Myfollower[]=[];
 	currentUserIndex: number = 0;
-
+	currentUserIndex2: number = 1;
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -44,15 +44,17 @@ class AppContainer extends HTMLElement {
 	}
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = '';
+			this.shadowRoot.innerHTML = `
+				<custom-follobackgrond></custom-follobackgrond>
+			`;
 			this.shadowRoot.appendChild(this.users[this.currentUserIndex]);
+
 			this.feeds.forEach((feed) => {
 				this.shadowRoot?.appendChild(feed);
 			});
-			this.followers.forEach((follower) => {
-				this.shadowRoot?.appendChild(follower);
-			});
-			
+				
+			this.shadowRoot.appendChild(this.followers[this.currentUserIndex]);
+			this.shadowRoot.appendChild(this.followers[this.currentUserIndex2]);
 		}
 	}
 }

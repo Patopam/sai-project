@@ -1,17 +1,12 @@
-.fondo{
-/* suggestions */
-
-position: absolute;
-width: 328px;
-height: 325px;
-left: 32px;
-top: 601px;
-
-background: #25245E;
-border-radius: 20px;
-
+.followers{
+    position: absolute;
+    width: 328px;
+    height: 325px;
+    left: 32px;
+    top: 601px;
 }
 .imagen-usuario{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+	height: 100px;
+	border-radius: 100px;
 }
