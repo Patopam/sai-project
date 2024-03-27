@@ -7,7 +7,7 @@ export enum Attribute2 {
 class feed extends HTMLElement {
 	image?: string;
 	username?: string;
-    postimage?: string;
+	postimage?: string;
 
 	constructor() {
 		super();
@@ -18,14 +18,14 @@ class feed extends HTMLElement {
 		const attrs: Record<Attribute2, null> = {
 			image: null,
 			username: null,
-            postimage: null,
+			postimage: null,
 		};
 
 		return Object.keys(attrs);
 	}
 
 	connectedCallback() {
-			
+
 		this.render();
 	}
 
@@ -37,18 +37,16 @@ class feed extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../src/Components/feed/feed.css">
-				<section class="hijo">
-					<div class="componente">
-						<div class="info">
-							<img src="${this.image}" class="imagen-usuario"></img>
-							<p>${this.username}</p>
-						</div>
-						<img class="imagen-post" src="${this.postimage}"></img>
-						<i class="fa fa-heart" id="icono-me-gusta"></i>
+        <link rel="stylesheet" href="../src/Components/feed/feed.css">
+				<div class="componente">
+					<div class="info">
+						<img src="${this.image}" class="imagen-usuario"></img>
+						<p>${this.username}</p>
 					</div>
-				</section>
-            `;
+					<img class="imagen-post" src="${this.postimage}"></img>
+					<i class="fa fa-heart" id="icono-me-gusta"></i>
+				</div>
+      `;
 		}
 	}
 }

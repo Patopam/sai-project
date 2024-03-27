@@ -3,6 +3,7 @@ import './Components/indexP';
 import MyUser, { Attribute } from './Components/user/user';
 import MyFeed, { Attribute2 } from './Components/feed/feed';
 import Myfollower, { Attribute3 } from './Components/Followers/Followers';
+import './styleA.css';
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
 	feeds: MyFeed[]=[];
@@ -12,6 +13,12 @@ class AppContainer extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+	
+	
+
+	}
+	connectedCallback() {
+
 		UserData.forEach((user) => {
 			const UserCard = this.ownerDocument.createElement('custom-user') as MyUser;
 			UserCard.setAttribute(Attribute.name, user.name);
@@ -21,10 +28,7 @@ class AppContainer extends HTMLElement {
 			UserCard.setAttribute(Attribute.followers, String(user.followers));
 			this.users.push(UserCard);
 		});
-	
 
-	}
-	connectedCallback() {
 		UserData.forEach((feed)=> {
 			const FeedCard = this.ownerDocument.createElement('custom-feed') as MyFeed;
 			FeedCard.setAttribute(Attribute2.image, feed.image);
@@ -45,13 +49,23 @@ class AppContainer extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+				<style>
+					${styles}
+				</style>
 				<custom-follobackgrond></custom-follobackgrond>
 			`;
 			this.shadowRoot.appendChild(this.users[this.currentUserIndex]);
 
+			const pepitoDiv = document.createElement('div');
+			pepitoDiv.className = 'pepito';
+			this.shadowRoot.appendChild(pepitoDiv);
+
 			this.feeds.forEach((feed) => {
-				this.shadowRoot?.appendChild(feed);
+				pepitoDiv?.appendChild(feed);
 			});
+
+			const closingDiv = document.createElement('div');
+			this.shadowRoot.appendChild(closingDiv);
 				
 			this.shadowRoot.appendChild(this.followers[this.currentUserIndex]);
 			this.shadowRoot.appendChild(this.followers[this.currentUserIndex2]);
