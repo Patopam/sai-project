@@ -1,0 +1,12 @@
+.followers{
+    position: absolute;
+    width: 328px;
+    height: 325px;
+    left: 32px;
+    top: 601px;
+}
+.imagen-usuario{
+    width: 100px;
+	height: 100px;
+	border-radius: 100px;
+}
