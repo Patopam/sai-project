@@ -1,94 +1,68 @@
-/*feed*/
 
-.contenedorfeed {
-	position: absolute;
-	width: 50%;
-	height: 50%;
-	left: 25%;
-	right: 25%;
-	top: 25%;
-	display: flex;
-	flex-direction: row;
-	gap: 10px;
-	flex-wrap: wrap;
-	/*background-color: rgb(255, 0, 0);*/
+.contenedorfeed{
+
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    display: flex;
+   flex-direction: row;
+   gap: 10px;
+   flex-wrap: wrap;
+    /*background-color: rgb(255, 0, 0);*/
+
 }
+
 @media (max-width: 800px) {
-	.contenedorfeed {
-		width: 90%;
-		height: 90%;
-		left: 5%;
-		right: 10%;
-	}
+    .contenedorfeed{
+        width: 90%;
+        height: 90%;
+        left: 5%;
+        right: 10%;
+
+    } 
+
 }
 @media (max-width: 400px) {
-	.contenedorfeed {
-		width: 90%;
-		height: 90%;
-		display: flex;
-		justify-content: center;
-	}
-}
+    .contenedorfeed{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+    } 
 
-/*followers*/
-
-.contenedorfollowers {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	top: 650px;
-	left: 32px;
 }
-@media (max-width: 800px) {
-	.contenedorfollowers {
-		display: none;
-	}
+.contenedorfollowers{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 650px;
+    left: 25px;
+   
+}
+nav-app{
+    display: none;
 }
 @media (max-width: 800px) {
-	custom-follobackgrond {
-		display: none;
-	}
+    nav-app{
+        display: flex;
+
+    } 
+
 }
-
-/*user*/
-
-.contenedoruser {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	top: 80px;
-	left: 20px;
-}
-
 @media (max-width: 800px) {
-	.contenedoruser {
-		display: none;
-	}
-}
+    .contenedorfollowers{
+        display: none;
 
-/*trend*/
+    } 
 
-.contenedortrend {
-	flex-direction: column;
-	position: relative;
-	left: 80%;
-}
-
-custom-trending {
-	flex-direction: column;
-	position: relative;
-	top: 80px;
-	left: 80%;
-}
-
+} 
 @media (max-width: 800px) {
-	.contenedortrend {
-		display: none;
-	}
-}
+    custom-follobackgrond{
+        display: none;
 
-@media (max-width: 800px) {
-	constume-trending {
-		display: none;
-	}
-}
+    } 
+
+} 
