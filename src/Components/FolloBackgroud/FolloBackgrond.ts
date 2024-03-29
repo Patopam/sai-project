@@ -18,9 +18,14 @@ class follobackgrond extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../src/Components/FolloBackgroud/FolloBackgrond.css">
-            <div class="fondo">
-        
-            </div>
+			<div class="box-followers">
+				<div class="Who">
+					<h2>Who is follow you </h2>
+				</div>
+				<div class="Show">
+					<p>Show more</p>
+				</div>
+			</div>
             `;
 		}
 	}

@@ -1,0 +1,40 @@
+.Trendss {
+	display: flex;
+	height: 60px;
+	width: 33px;
+	justify-content: center;
+	margin: 10px;
+	position: sticky;
+	top: auto;
+}
+
+.Tnames {
+	height: 44px;
+	width: 22px;
+}
+
+.Tnames p {
+	margin: 7px;
+}
+
+.name-trends {
+	color: #fff;
+	font-family: Satoshi;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.number-post {
+	color: #7796f1;
+	font-family: Satoshi;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
