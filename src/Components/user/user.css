@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 	section {
 		width: 100%;
 		height: auto;
@@ -6,7 +6,14 @@
 		margin: 0;
 		position: relative;
 	}
+} */
+
+@media (max-width: 800px) {
+	section {
+		display: none;
+	}
 }
+
 section {
 	box-sizing: border-box;
 	position: absolute;
@@ -17,6 +24,7 @@ section {
 	background: #25245e;
 	border-radius: 20px;
 	outline: 0;
+
 }
 
 img {
