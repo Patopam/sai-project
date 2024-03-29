@@ -48,22 +48,20 @@ class followers extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../src/Components/Followers/Followers.css">
-			<div class="followers">
-				<h2>Who is follow you </h2>
+			
 					<div class="infoFollo">
 						<div class="ImgUsuario">
 							<img src="${this.image}" class="imagen-usuario"></img>
-							<div class="names">
-								<p>${this.name}</p>
-								<p>${this.username}</p>
-							</div>
 						</div>
-						
-						<button>follow</button>
-					
+						<div class="names">
+								<p class="name-follower">${this.name}</p>
+								<p class="username-follower">@${this.username}</p>
+						</div>
+						<div class="box-button ">
+							<button>follow</button>
+						</div>
 					</div>
-				<p>Show more</p>
-			</div>
+			
             `;
 		}
 	}
