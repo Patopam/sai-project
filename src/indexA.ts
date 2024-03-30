@@ -4,24 +4,29 @@ import './Components/indexP';
 import MyUser, { Attribute } from './Components/user/user';
 import MyFeed, { Attribute2 } from './Components/feed/feed';
 import Myfollower, { Attribute3 } from './Components/Followers/Followers';
+
 import MyTrend, { Attribute4 } from './Components/trends/trend';
+
 import stylesA from './styleA.css';
 
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
 	feeds: MyFeed[]=[];
 	followers: Myfollower[]=[];
+
 	trends: MyTrend[] = [];
 	currentTrendIndex: number = 0;
 	currentTrendIndex2: number = 1;
 	currentTrendIndex3: number = 2;
 	currentTrendIndex4: number = 4;
+
 	currentUserIndex: number = 0;
 	currentUserIndex2: number = 1;
 	currentUserIndex3: number = 2;
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+
 
 	}
 	connectedCallback() {
@@ -31,7 +36,7 @@ class AppContainer extends HTMLElement {
 			trendCard.setAttribute(Attribute4.post, String(trend.post));
 			this.trends.push(trendCard);
 		});
-	
+
 		UserData.forEach((user) => {
 			const UserCard = this.ownerDocument.createElement('custom-user') as MyUser;
 			UserCard.setAttribute(Attribute.name, user.name);
@@ -70,6 +75,7 @@ class AppContainer extends HTMLElement {
 				</style>
 				<custom-follobackgrond></custom-follobackgrond>
 				<nav-app></nav-app>
+
 				<custom-trending></custom-trending>	
 			`;
 
@@ -77,6 +83,7 @@ class AppContainer extends HTMLElement {
 			ContenedorUser.className = 'contenedoruser';
 			ContenedorUser.appendChild(this.users[this.currentUserIndex]);
 			this.shadowRoot?.appendChild(ContenedorUser);
+
 
 			const ContenedorFeed = this.ownerDocument.createElement('section');
 			ContenedorFeed.className = 'contenedorfeed';
@@ -92,6 +99,7 @@ class AppContainer extends HTMLElement {
 			ContenedorFollowers.appendChild(this.followers[this.currentUserIndex2]);
 			ContenedorFollowers.appendChild(this.followers[this.currentUserIndex3]);
 			this.shadowRoot?.appendChild(ContenedorFollowers);
+
 
 			const ContenedorTrends = this.ownerDocument.createElement('div');
 			ContenedorTrends.className = 'contenedortrend';
