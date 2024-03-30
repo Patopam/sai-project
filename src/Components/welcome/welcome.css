@@ -1,0 +1,45 @@
+.welBar {
+	width: 690px;
+	height: 131px;
+	flex-shrink: 0;
+	border-radius: 20px;
+	background: #25245e;
+}
+
+.ImgUser img {
+	width: 60px;
+	height: 60px;
+	flex-shrink: 0;
+	border-radius: 60px;
+	position: absolute;
+	top: 11px;
+	left: 30px;
+}
+
+.text {
+	position: absolute;
+	top: 19px;
+	left: 100px;
+	border-radius: 40px;
+	box-sizing: border-box;
+	width: 560px;
+	height: 45px;
+	flex-shrink: 0;
+	border-radius: 5px;
+	background: #393879;
+}
+
+.text h2 {
+	color: #fff;
+	font-family: Satoshi;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-left: 11px;
+}
+
+.welBar {
+	display: flexbox;
+	flex-direction: row;
+}

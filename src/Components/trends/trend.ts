@@ -36,6 +36,9 @@ class trends extends HTMLElement {
 			case Attribute4.post:
 				this.post = newValue ? Number(newValue) : undefined;
 				break;
+			default:
+				this[propName] = newValue;
+				break;
 		}
 		this.render();
 	}
@@ -49,14 +52,9 @@ class trends extends HTMLElement {
             <div class="Trendss">
 
 						<div class="Tnames">
-								<h2 class="name-trend">#${this.trend}</h2>
-								<p class="number-post">@${this.post} Posts</p>
+								<h2>#${this.trend}</h2>
+								<p class="number-post">${this.post} Posts</p>
 						</div>
-
-						<div class="dots">
-            <span class="material-symbols-outlined">more_horiz</span>
-						</div>
-						
             </div>
 
 

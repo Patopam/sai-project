@@ -1,77 +1,60 @@
-
 /*feed*/
 
-
-.contenedorfeed{
-
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    left: 25%;
-    right: 25%;
-    top: 25%;
-    display: flex;
-   flex-direction: row;
-   gap: 10px;
-   flex-wrap: wrap;
-    /*background-color: rgb(255, 0, 0);*/
-
+.contenedorfeed {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	left: 25%;
+	right: 25%;
+	top: 25%;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	flex-wrap: wrap;
+	/*background-color: rgb(255, 0, 0);*/
 }
 
 @media (max-width: 800px) {
-    .contenedorfeed{
-        width: 90%;
-        height: 90%;
-        left: 5%;
-        right: 10%;
-
-    } 
-
+	.contenedorfeed {
+		width: 90%;
+		height: 90%;
+		left: 5%;
+		right: 10%;
+	}
 }
 @media (max-width: 400px) {
-    .contenedorfeed{
-        width: 90%;
-        height: 90%;
-        display: flex;
-        justify-content: center;
-    } 
-
+	.contenedorfeed {
+		width: 90%;
+		height: 90%;
+		display: flex;
+		justify-content: center;
+	}
 }
-
 
 /*followers*/
 
-.contenedorfollowers{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    top: 665px;
-    left: 25px;
-   
+.contenedorfollowers {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	top: 530px;
+	left: 2%;
 }
 
-
 @media (max-width: 800px) {
-    .contenedorfollowers{
-        display: none;
-
-    } 
-
-} 
+	.contenedorfollowers {
+		display: none;
+	}
+}
 @media (max-width: 800px) {
-    custom-follobackgrond{
-        display: none;
-
-    } 
-
-} 
-
-custom-follobackgrond{
-    position: absolute;
-    left: 25px;
-    top: 620px; 
-
+	custom-follobackgrond {
+		display: none;
+	}
+}
+custom-follobackgrond {
+	position: absolute;
+	left: 2.3%;
+	top: 620px;
 }
 
 /*user*/
@@ -81,7 +64,7 @@ custom-follobackgrond{
 	flex-direction: column;
 	position: relative;
 	top: 100px;
-	left: 20px;
+	left: 2%;
 }
 
 @media (max-width: 800px) {
@@ -95,7 +78,8 @@ custom-follobackgrond{
 .contenedortrend {
 	flex-direction: column;
 	position: absolute;
-	left: 80%;
+	top: 16%;
+	left: 76%;
 }
 
 custom-trending {
@@ -105,13 +89,13 @@ custom-trending {
 	left: 75%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1280px) {
 	.contenedortrend {
 		display: none;
 	}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1280px) {
 	custom-trending {
 		display: none;
 	}
@@ -119,14 +103,26 @@ custom-trending {
 
 /*nav-app*/
 
-nav-app{
-    display: none;
+nav-app {
+	display: none;
 }
 @media (max-width: 800px) {
-    nav-app{
-        display: flex;
-
-    } 
-
+	nav-app {
+		display: flex;
+	}
 }
 
+/*welcome*/
+
+.contenedorwelcome {
+	flex-direction: column;
+	position: relative;
+	left: 30%;
+	top: 100px;
+}
+
+@media (max-width: 800px) {
+	.contenedorwelcome {
+		display: none;
+	}
+}
