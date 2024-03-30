@@ -13,6 +13,7 @@
 	flex-wrap: wrap;
 	/*background-color: rgb(255, 0, 0);*/
 }
+
 @media (max-width: 800px) {
 	.contenedorfeed {
 		width: 90%;
@@ -36,9 +37,10 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	top: 650px;
-	left: 32px;
+	top: 530px;
+	left: 2%;
 }
+
 @media (max-width: 800px) {
 	.contenedorfollowers {
 		display: none;
@@ -49,6 +51,11 @@
 		display: none;
 	}
 }
+custom-follobackgrond {
+	position: absolute;
+	left: 2.3%;
+	top: 620px;
+}
 
 /*user*/
 
@@ -56,8 +63,8 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	top: 80px;
-	left: 20px;
+	top: 100px;
+	left: 2%;
 }
 
 @media (max-width: 800px) {
@@ -70,25 +77,52 @@
 
 .contenedortrend {
 	flex-direction: column;
-	position: relative;
-	left: 80%;
+	position: absolute;
+	top: 16%;
+	left: 76%;
 }
 
 custom-trending {
 	flex-direction: column;
 	position: relative;
-	top: 80px;
-	left: 80%;
+	top: 100px;
+	left: 75%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1280px) {
 	.contenedortrend {
 		display: none;
 	}
 }
 
+@media (max-width: 1280px) {
+	custom-trending {
+		display: none;
+	}
+}
+
+/*nav-app*/
+
+nav-app {
+	display: none;
+}
 @media (max-width: 800px) {
-	constume-trending {
+	nav-app {
+		display: flex;
+	}
+}
+
+/*welcome*/
+
+.contenedorwelcome {
+	flex-direction: column;
+	position: relative;
+	left: 30%;
+	top: 100px;
+}
+
+@media (max-width: 800px) {
+	.contenedorwelcome {
 		display: none;
 	}
 }
