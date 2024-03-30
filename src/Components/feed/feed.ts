@@ -46,11 +46,13 @@ class feed extends HTMLElement {
 					<div class="info">
 						<img src="${this.image}" class="imagen-usuario"></img>
 						<p>@${this.username}</p>
+						<Fa2 size={24} color="blue"/>
 					</div>
+						<i class="fa-solid fa-heart" style="color: #ff1a1a;"></i>
 					<div class="post">
 						<img class="imagen-post" src="${this.postimage}"></img>
 					</div>
-					<FaAdn size={24} color="red" />
+					
 				</div>
       `;
 		}
