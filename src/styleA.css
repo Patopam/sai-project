@@ -1,4 +1,7 @@
 
+/*feed*/
+
+
 .contenedorfeed{
 
     position: absolute;
@@ -34,24 +37,21 @@
     } 
 
 }
+
+
+/*followers*/
+
 .contenedorfollowers{
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 650px;
+
+    top: 665px;
     left: 25px;
    
 }
-nav-app{
-    display: none;
-}
-@media (max-width: 800px) {
-    nav-app{
-        display: flex;
 
-    } 
 
-}
 @media (max-width: 800px) {
     .contenedorfollowers{
         display: none;
@@ -66,3 +66,67 @@ nav-app{
     } 
 
 } 
+
+custom-follobackgrond{
+    position: absolute;
+    left: 25px;
+    top: 620px; 
+
+}
+
+/*user*/
+
+.contenedoruser {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	top: 100px;
+	left: 20px;
+}
+
+@media (max-width: 800px) {
+	.contenedoruser {
+		display: none;
+	}
+}
+
+/*trend*/
+
+.contenedortrend {
+	flex-direction: column;
+	position: absolute;
+	left: 80%;
+}
+
+custom-trending {
+	flex-direction: column;
+	position: relative;
+	top: 100px;
+	left: 75%;
+}
+
+@media (max-width: 800px) {
+	.contenedortrend {
+		display: none;
+	}
+}
+
+@media (max-width: 800px) {
+	custom-trending {
+		display: none;
+	}
+}
+
+/*nav-app*/
+
+nav-app{
+    display: none;
+}
+@media (max-width: 800px) {
+    nav-app{
+        display: flex;
+
+    } 
+
+}
+
