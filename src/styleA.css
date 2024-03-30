@@ -46,16 +46,7 @@
     left: 25px;
    
 }
-nav-app{
-    display: none;
-}
-@media (max-width: 800px) {
-    nav-app{
-        display: flex;
 
-    } 
-
-}
 @media (max-width: 800px) {
     .contenedorfollowers{
         display: none;
@@ -91,7 +82,7 @@ nav-app{
 
 .contenedortrend {
 	flex-direction: column;
-	position: relative;
+	position: absolute;
 	left: 80%;
 }
 
@@ -99,7 +90,7 @@ custom-trending {
 	flex-direction: column;
 	position: relative;
 	top: 80px;
-	left: 80%;
+	left: 75%;
 }
 
 @media (max-width: 800px) {
@@ -109,7 +100,20 @@ custom-trending {
 }
 
 @media (max-width: 800px) {
-	constume-trending {
+	custom-trending {
 		display: none;
 	}
+}
+
+/*nav-app*/
+
+nav-app{
+    display: none;
+}
+@media (max-width: 800px) {
+    nav-app{
+        display: flex;
+
+    } 
+
 }

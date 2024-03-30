@@ -26,7 +26,7 @@ class AppContainer extends HTMLElement {
 	}
 	connectedCallback() {
 		trendData.forEach((trend) => {
-			const trendCard = this.ownerDocument.createElement('custom-trend') as MyTrend;
+			const trendCard = this.ownerDocument.createElement('custom-trends') as MyTrend;
 			trendCard.setAttribute(Attribute4.trend, trend.trend);
 			trendCard.setAttribute(Attribute4.post, String(trend.post));
 			this.trends.push(trendCard);
