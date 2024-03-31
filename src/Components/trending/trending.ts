@@ -17,7 +17,7 @@ class trending extends HTMLElement {
 					<h2>TRENDING RIGHT NOW</h2>
 				</div>
 				<div class="Show">
-					<p>Show more</p>
+					<button>Show more</button>
 				</div>
 			</div>
             `;

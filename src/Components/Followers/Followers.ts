@@ -49,9 +49,6 @@ class followers extends HTMLElement {
 			this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../src/Components/Followers/Followers.css">
 			
-
-				<div class="box-follo" >
-
 					<div class="infoFollo">
 						<div class="ImgUsuario">
 							<img src="${this.image}" class="imagen-usuario"></img>
@@ -64,8 +61,6 @@ class followers extends HTMLElement {
 							<button>follow</button>
 						</div>
 					</div>
-
-				</div>
 			
             `;
 		}

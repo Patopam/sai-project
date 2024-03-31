@@ -8,51 +8,51 @@ export const trendData: DataSTrend[] = [
 	{
 		id: 1,
 		trend: 'Cats',
-		post: 21.0,
+		post: 21000,
 	},
 	{
 		id: 2,
 		trend: 'Paint',
-		post: 20.7,
+		post: 20700,
 	},
 	{
 		id: 3,
 		trend: 'Sketch',
-		post: 20.0,
+		post: 20000,
 	},
 	{
 		id: 4,
-		trend: 'Mouse',
-		post: 19.68,
+		trend: 'Acrylics',
+		post: 19680,
 	},
 	{
 		id: 5,
 		trend: 'Halloween',
-		post: 19.4,
+		post: 19400,
 	},
 	{
 		id: 6,
 		trend: 'Oil Painting',
-		post: 18.0,
+		post: 18000,
 	},
 	{
 		id: 7,
 		trend: 'Watercolors',
-		post: 17.9,
+		post: 17900,
 	},
 	{
 		id: 8,
-		trend: 'Photography',
-		post: 17.05,
+		trend: 'Realism',
+		post: 17050,
 	},
 	{
 		id: 9,
 		trend: 'Green',
-		post: 16.78,
+		post: 16780,
 	},
 	{
 		id: 10,
 		trend: 'Forest',
-		post: 16.2,
+		post: 16200,
 	},
 ];

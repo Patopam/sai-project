@@ -1,18 +1,12 @@
 class follobackgrond extends HTMLElement {
-	
-
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
-
-
 	connectedCallback() {
 		this.render();
 	}
-
-
 
 	render() {
 		if (this.shadowRoot) {
@@ -23,7 +17,7 @@ class follobackgrond extends HTMLElement {
 					<h2>Who is follow you </h2>
 				</div>
 				<div class="Show">
-					<p>Show more</p>
+					<button>Show more</button>
 				</div>
 			</div>
             `;
