@@ -52,7 +52,6 @@ class AppContainer extends HTMLElement {
 			FeedCard.setAttribute(Attribute2.image, feed.image);
 			FeedCard.setAttribute(Attribute2.username, feed.username);
 			FeedCard.setAttribute(Attribute2.postimage, feed.postimage);
-			FeedCard.setAttribute(Attribute2.icono, feed.icono);
 			this.feeds.push(FeedCard);
 		});
 
