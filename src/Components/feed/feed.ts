@@ -54,11 +54,13 @@ class feed extends HTMLElement {
 					<div class="post">
 						<img class="imagen-post" src="${this.postimage}"></img>
 					</div>
+
 					<div class="box-like">
 						<custom-like></custom-like>
 					</div>
 					
 					
+
 				</div>
       `;
 		}

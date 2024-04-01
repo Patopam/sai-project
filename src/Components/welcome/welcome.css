@@ -1,6 +1,8 @@
 .welBar {
+
 	width: 685px;
 	height: 120px;
+
 	flex-shrink: 0;
 	border-radius: 20px;
 	background: #25245e;

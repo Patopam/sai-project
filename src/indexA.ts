@@ -8,7 +8,9 @@ import MyTrend, { Attribute4 } from './Components/trends/trend';
 import MyWelcome, { Attribute5 } from './Components/welcome/welcome';
 import stylesA from './styleA.css';
 import user from './Components/user/user';
+
 import Myhead, { Attribute6 } from './Components/head/head';
+
 
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
@@ -16,7 +18,9 @@ class AppContainer extends HTMLElement {
 	followers: Myfollower[] = [];
 	trends: MyTrend[] = [];
 	welcomes: MyWelcome[] = [];
+
 	head:Myhead[] = []
+
 	currentTrendIndex: number = 0;
 	currentTrendIndex2: number = 1;
 	currentTrendIndex3: number = 2;
@@ -124,7 +128,9 @@ class AppContainer extends HTMLElement {
 			ContenedorFollowers.appendChild(this.followers[this.currentUserIndex4]);
 
 			this.shadowRoot?.appendChild(ContenedorFollowers);
+
 			this.shadowRoot.appendChild(this.head[this.currentUserIndex]);
+
 		}
 	}
 }
