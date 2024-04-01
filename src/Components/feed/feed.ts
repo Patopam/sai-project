@@ -43,8 +43,8 @@ class feed extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 	
-
-
+			
+			<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
        		 <link rel="stylesheet" href="../src/Components/feed/feed.css">
 				<div class="componente">
 					<div class="info">
@@ -53,8 +53,11 @@ class feed extends HTMLElement {
 					</div>
 					<div class="post">
 						<img class="imagen-post" src="${this.postimage}"></img>
-					
 					</div>
+					<div class="box-like">
+						<custom-like></custom-like>
+					</div>
+					
 					
 				</div>
       `;

@@ -58,7 +58,7 @@ class followers extends HTMLElement {
 								<p class="username-follower">@${this.username}</p>
 						</div>
 						<div class="box-button ">
-							<button>follow</button>
+							<custom-button></custom-button>
 						</div>
 					</div>
 			

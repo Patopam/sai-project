@@ -1,4 +1,4 @@
-import iconolike from '../assets/corazon.png'
+
 interface DataShape {
 	id: number;
 	name: string;
@@ -7,7 +7,7 @@ interface DataShape {
 	following: number;
 	followers: number;
 	postimage: string;
-	icono: string,
+	
 }
 
 export const UserData: DataShape[] = [
@@ -19,7 +19,7 @@ export const UserData: DataShape[] = [
 		following: 514,
 		followers: 1020,
 		postimage:'https://i.pinimg.com/736x/5d/62/56/5d6256b2311dd6e08a5a1e3b269a8c7d.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 2,
@@ -29,7 +29,7 @@ export const UserData: DataShape[] = [
 		following: 409,
 		followers: 600,
 		postimage:'https://i.pinimg.com/564x/e1/e9/47/e1e947932d1cb620ee2a4ae7fe7ca7de.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 3,
@@ -39,7 +39,7 @@ export const UserData: DataShape[] = [
 		following: 200,
 		followers: 13000,
 		postimage:'https://i.pinimg.com/564x/d2/64/93/d2649367cf87ad44b57b9bd4a9c7b1a3.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 4,
@@ -49,7 +49,7 @@ export const UserData: DataShape[] = [
 		following: 20,
 		followers: 160,
 		postimage:'https://i.pinimg.com/564x/62/80/53/628053f93672c05dbb85f1ee93ea96e6.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 5,
@@ -59,7 +59,7 @@ export const UserData: DataShape[] = [
 		following: 46,
 		followers: 1220,
 		postimage:'https://i.pinimg.com/564x/6f/70/10/6f701099714c983225eb3b3038c896ae.jpg',
-		icono: iconolike,
+	
 	},
 	{
 		id: 6,
@@ -69,7 +69,7 @@ export const UserData: DataShape[] = [
 		following: 345,
 		followers: 140000,
 		postimage:'https://i.pinimg.com/564x/e0/c8/b5/e0c8b55ed4ec89ddc75eefc63bcb7f7b.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 7,
@@ -79,7 +79,7 @@ export const UserData: DataShape[] = [
 		following: 129,
 		followers: 1452,
 		postimage:'https://i.pinimg.com/736x/41/c8/4b/41c84b371c3ee70d36b5eee78c97cfad.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 8,
@@ -89,7 +89,7 @@ export const UserData: DataShape[] = [
 		following: 400,
 		followers: 15000,
 		postimage:'https://i.pinimg.com/564x/df/fe/87/dffe8757a9fd8c967d904b13ab14f8c3.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 9,
@@ -99,7 +99,7 @@ export const UserData: DataShape[] = [
 		following: 1200,
 		followers: 1000,
 		postimage:'https://i.pinimg.com/564x/46/3e/c8/463ec8a4f6e7f350fe34127cba59e2f9.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 10,
@@ -109,7 +109,7 @@ export const UserData: DataShape[] = [
 		following: 600,
 		followers: 40000,
 		postimage:'https://i.pinimg.com/564x/ed/21/3a/ed213aade929d0527e1e49b24f096978.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 11,
@@ -119,7 +119,7 @@ export const UserData: DataShape[] = [
 		following: 200,
 		followers: 1000,
 		postimage:'https://i.pinimg.com/736x/a5/ab/f8/a5abf825ad3f3882f0daba2fdbdc5113.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 12,
@@ -129,7 +129,7 @@ export const UserData: DataShape[] = [
 		following: 500,
 		followers: 13000,
 		postimage:'https://i.pinimg.com/564x/da/c2/79/dac2790dafa5acbace3f752cb9d221d4.jpg',
-		icono: iconolike,
+	
 	},
 	{
 		id: 13,
@@ -139,7 +139,7 @@ export const UserData: DataShape[] = [
 		following: 200,
 		followers: 1300,
 		postimage:'https://i.pinimg.com/564x/68/ee/59/68ee5916b32d01c5519cf69d9a39f5ac.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 14,
@@ -149,7 +149,7 @@ export const UserData: DataShape[] = [
 		following: 340,
 		followers: 120300,
 		postimage:'https://i.pinimg.com/564x/2e/51/ec/2e51ec76b6ead6d7c6f2affe56df299a.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 15,
@@ -159,7 +159,7 @@ export const UserData: DataShape[] = [
 		following: 20,
 		followers: 200,
 		postimage:'https://i.pinimg.com/564x/ca/f3/31/caf331b93b58766479e675c71a739dc0.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 16,
@@ -169,7 +169,7 @@ export const UserData: DataShape[] = [
 		following: 670,
 		followers: 9000,
 		postimage:'https://i.pinimg.com/564x/e8/12/18/e81218689803f1dcf7f3a697362ffda4.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 17,
@@ -179,7 +179,7 @@ export const UserData: DataShape[] = [
 		following: 100,
 		followers: 130000,
 		postimage:'https://i.pinimg.com/736x/3c/28/3d/3c283d816511ab0369e9efadb39d22df.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 18,
@@ -189,7 +189,7 @@ export const UserData: DataShape[] = [
 		following: 10,
 		followers: 12000,
 		postimage:'https://i.pinimg.com/736x/34/dd/b3/34ddb3cdf51c7e27dd850c59b66356f7.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 19,
@@ -199,7 +199,7 @@ export const UserData: DataShape[] = [
 		following: 2,
 		followers: 3000,
 		postimage:'https://i.pinimg.com/564x/de/07/d0/de07d0dd2ce364c69a7d9d0b958d0683.jpg',
-		icono: iconolike,
+		
 	},
 	{
 		id: 20,
@@ -209,6 +209,6 @@ export const UserData: DataShape[] = [
 		following: 120,
 		followers: 14000,
 		postimage:'https://i.pinimg.com/564x/6d/5f/78/6d5f78f90d6c86b418dff1f529cb1f0d.jpg',
-		icono: iconolike,
+		
 	},
 ];
