@@ -29,6 +29,7 @@
 		width: 90%;
 		height: 90%;
 		display: flex;
+		top: 12%;
 		justify-content: center;
 	}
 }
@@ -42,8 +43,6 @@
 	position: absolute;
 	top: 670px;
 	left: 4%;
-
-
 }
 
 @media (max-width: 800px) {
@@ -84,7 +83,7 @@ custom-follobackgrond {
 	flex-direction: column;
 	position: absolute;
 
-	top: 20%;
+	top: 17%;
 
 	left: 76%;
 }
@@ -94,6 +93,13 @@ custom-trending {
 	position: relative;
 	top: 100px;
 	left: 75%;
+}
+@media (max-width: 1500px) {
+	.contenedortrend {
+		top: 20%;
+
+		left: 76%;
+	}
 }
 
 @media (max-width: 1280px) {
@@ -127,10 +133,17 @@ nav-app {
 	position: absolute;
 	left: 26%;
 	top: 110px;
-
 }
 
 @media (max-width: 800px) {
+	.contenedorwelcome {
+		position: absolute;
+		left: 7%;
+	}
+}
+
+@media (max-width: 400px) {
+
 	.contenedorwelcome {
 		display: none;
 	}

@@ -3,13 +3,10 @@ class likeButton extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
-   
-	connectedCallback() {
-        this.render();
 
-        
-      
-		
+	connectedCallback() {
+		this.render();
+
 	}
 
 	render() {
@@ -25,3 +22,4 @@ class likeButton extends HTMLElement {
 
 customElements.define('custom-like', likeButton);
 export default likeButton;
+
