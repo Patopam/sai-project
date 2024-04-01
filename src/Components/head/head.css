@@ -66,6 +66,7 @@ p {
 .bxs-bell {
 	color: #ffffff;
 	font-size: 32px;
+
 }
 @media (max-width: 800px) {
 	.box-Buttons {
@@ -80,6 +81,7 @@ p {
 	.bxs-bell {
 		margin-left: 20px;
 	}
+
 }
 
 @media (max-width: 400px) {
@@ -155,3 +157,4 @@ p {
 .name {
 	color: #7796f1;
 }
+

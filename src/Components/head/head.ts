@@ -3,6 +3,7 @@ export enum Attribute6 {
 	'image' = 'image',
 	'username' = 'username',
 	'uid' = 'uid',
+
 }
 
 class head extends HTMLElement {
@@ -20,6 +21,7 @@ class head extends HTMLElement {
 			image: null,
 			username: null,
 			uid: null,
+
 		};
 
 		return Object.keys(attrs);
@@ -38,6 +40,7 @@ class head extends HTMLElement {
 				this[propName] = newValue;
 				break;
 		}
+
 		this.render();
 	}
 
@@ -50,6 +53,7 @@ class head extends HTMLElement {
 					<div class="box-head">
                         <div class="box-logo">
                             <img src="${logosai}" alt="logosai"  draggable="false"/>
+
                         </div>
                         <div class="box-text">
                             <input type="text" class="Bar-text" placeholder="search">
@@ -64,6 +68,7 @@ class head extends HTMLElement {
                             <button><i class='bx bxs-chat bx-tada-hover'></i></button>
                             <button><i class='bx bxs-bell bx-tada-hover'></i></button>
 
+
                         </div>
                         <div class="box-user">
                             <img src="${this.image}" class="perfil"></img>
@@ -71,6 +76,7 @@ class head extends HTMLElement {
                         </div>
                         <div class="box-menu">
                             <button><i class='bx bxs-cog bx-spin-hover' ></i></button>
+
                         </div>
 					</div>
 
@@ -81,3 +87,4 @@ class head extends HTMLElement {
 
 customElements.define('custom-head', head);
 export default head;
+

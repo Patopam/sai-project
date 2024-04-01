@@ -6,6 +6,7 @@ class likeButton extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+
 	}
 
 	render() {
@@ -21,3 +22,4 @@ class likeButton extends HTMLElement {
 
 customElements.define('custom-like', likeButton);
 export default likeButton;
+

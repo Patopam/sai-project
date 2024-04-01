@@ -3,6 +3,7 @@
 	color: white;
 }
 button {
+
 	background-color: transparent;
 	border: none;
 }
@@ -10,3 +11,4 @@ button {
 button:active .bxs-like {
 	color: rgb(255, 0, 0);
 }
+
