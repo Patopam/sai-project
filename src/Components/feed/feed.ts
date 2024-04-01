@@ -3,13 +3,15 @@ export enum Attribute2 {
 	'image' = 'image',
 	'username' = 'username',
 	'postimage' = 'postimage',
+	
+
 }
 
 class feed extends HTMLElement {
 	image?: string;
 	username?: string;
 	postimage?: string;
-
+	
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -20,6 +22,8 @@ class feed extends HTMLElement {
 			image: null,
 			username: null,
 			postimage: null,
+			
+	
 		};
 
 		return Object.keys(attrs);
@@ -39,8 +43,8 @@ class feed extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 	
-
-
+			
+			<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
        		 <link rel="stylesheet" href="../src/Components/feed/feed.css">
 				<div class="componente">
 					<div class="info">
@@ -50,7 +54,13 @@ class feed extends HTMLElement {
 					<div class="post">
 						<img class="imagen-post" src="${this.postimage}"></img>
 					</div>
-					<FaAdn size={24} color="red" />
+
+					<div class="box-like">
+						<custom-like></custom-like>
+					</div>
+					
+					
+
 				</div>
       `;
 		}
