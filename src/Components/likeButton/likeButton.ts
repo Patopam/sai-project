@@ -1,10 +1,13 @@
 class likeButton extends HTMLElement {
 
+
 	megusta: boolean = false;
+
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
+
 
 
 	corazontoggle() {
@@ -23,11 +26,13 @@ class likeButton extends HTMLElement {
 		this.shadowRoot?.querySelector('#corazon')?.addEventListener('click', () => {
 			this.corazontoggle();
 		});
+
 	}
 
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+
             <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 				<link rel="stylesheet" href="../src/Components/likeButton/likeButton.css">
 
@@ -41,6 +46,7 @@ class likeButton extends HTMLElement {
 			this.shadowRoot.appendChild(corazon)
 
 		}
+
 
 	}
 }

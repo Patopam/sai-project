@@ -23,7 +23,9 @@ class folloButton extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+
 			<href ="https://api.fontshare.com/v2/css?f[]=satoshi@500&f[]=cabinet-grotesk@800&display=swap" rel="stylesheet" />
+
 				<link rel="stylesheet" href="../src/Components/folloButton/folloButton.css">
                 <button id="seguir">FOLLOW</button>
 			`;
