@@ -42,7 +42,9 @@
 
 	position: absolute;
 	top: 670px;
-	left: 4%;
+
+	left: 3%;
+
 }
 
 @media (max-width: 800px) {
@@ -83,7 +85,9 @@ custom-follobackgrond {
 	flex-direction: column;
 	position: absolute;
 
-	top: 17%;
+
+	top: 15%;
+
 
 	left: 76%;
 }
