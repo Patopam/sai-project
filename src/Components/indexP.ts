@@ -8,8 +8,6 @@ export { default as trending } from './trending/trending';
 export { default as welcome } from './welcome/welcome';
 export { default as PhotoButton } from './photoButton/photoButton';
 export { default as VideoButton } from './videoButton/videoButton';
-
 export { default as folloButton } from './folloButton/folloButton';
 export { default as head } from './head/head';
 export { default as likeButton } from './likeButton/likeButton';
-
