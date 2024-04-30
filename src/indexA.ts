@@ -1,14 +1,16 @@
 import { UserData } from './data/data';
 import { trendData } from './data/trendsData';
 import './Components/indexP';
-import MyUser, { Attribute } from './Components/user/user';
-import MyFeed, { Attribute2 } from './Components/feed/feed';
-import Myfollower, { Attribute3 } from './Components/Followers/Followers';
-import MyTrend, { Attribute4 } from './Components/trends/trend';
-import MyWelcome, { Attribute5 } from './Components/welcome/welcome';
+import MyUser, { Attribute } from './Components/Home/user/user';
+import MyFeed, { Attribute2 } from './Components/Home/Folder feed/feed/feed';
+import Myfollower, { Attribute3 } from './Components/Home/Folder Followers/Followers/Followers';
+import MyTrend, { Attribute4 } from './Components/Home/Folder trends/trends/trend';
+import MyWelcome, { Attribute5 } from './Components/Home/Folder Welcome/welcome/welcome';
 import stylesA from './styleA.css';
-import user from './Components/user/user';
-import Myhead, { Attribute6 } from './Components/head/head';
+import user from './Components/Home/user/user';
+
+import Myhead, { Attribute6 } from './Components/Home/head/head';
+
 
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
