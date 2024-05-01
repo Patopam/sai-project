@@ -1,3 +1,4 @@
+import Styles from './nav-app.css';
 class NavApp extends HTMLElement {
 	
 
@@ -16,9 +17,15 @@ class NavApp extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = ``;
+			
+			const css = this.ownerDocument.createElement('style');
+			css.innerHTML = Styles;
+			this.shadowRoot?.appendChild(css);
+			
 			this.shadowRoot.innerHTML = `
+			<style> ${Styles}</style>
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-            <link rel="stylesheet" href="../src/Components/nav-app/nav-app.css">
            <div class="box-nav">
                 <div class="box-buttoms">
                     <div class="home">

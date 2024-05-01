@@ -122,12 +122,12 @@ p{
     display: flex;
     top: 25%;
 }
-.bx-menu{
+.bxs-cog{
     color: #ffffff;
     font-size: 32px;
 }
 @media (max-width: 800px) {
-	.box-menu {
+	.bxs-cog {
         position: absolute;
         left: 85%;
         display: flex;
@@ -135,7 +135,7 @@ p{
 	}
 }
 @media (max-width: 400px) {
-	.box-menu {
+	.bxs-cog {
         position: absolute;
         left: 80%;
         display: flex;
