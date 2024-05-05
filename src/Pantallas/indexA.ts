@@ -1,16 +1,15 @@
-import { UserData } from './data/data';
-import { trendData } from './data/trendsData';
+import { UserData } from '../data/data';
+import { trendData } from '../data/trendsData';
 import './Components/indexP';
-import MyUser, { Attribute } from './Components/Home/user/user';
-import MyFeed, { Attribute2 } from './Components/Home/Folder-Feed/feed/feed';
-import Myfollower, { Attribute3 } from './Components/Home/Folder-Followers/Followers/Followers';
-import MyTrend, { Attribute4 } from './Components/Home/Folder-Trends/trends/trend';
-import MyWelcome, { Attribute5 } from './Components/Home/Folder-Welcome/welcome/welcome';
+import MyUser, { Attribute } from '../Components/Folder-Home/user/user';
+import MyFeed, { Attribute2 } from '../Components/Folder-Home/Folder-Feed/feed/feed';
+import Myfollower, { Attribute3 } from '../Components/Folder-Home/Folder-Followers/Followers/Followers';
+import MyTrend, { Attribute4 } from '../Components/Folder-Home/Folder-Trends/trends/trend';
+import MyWelcome, { Attribute5 } from '../Components/Folder-Home/Folder-Welcome/welcome/welcome';
 import stylesA from './styleA.css';
-import user from './Components/Home/user/user';
+import user from '../Components/Folder-Home/user/user';
 
-import Myhead, { Attribute6 } from './Components/Home/head/head';
-
+import Myhead, { Attribute6 } from '../Components/Folder-Home/head/head';
 
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
@@ -18,7 +17,7 @@ class AppContainer extends HTMLElement {
 	followers: Myfollower[] = [];
 	trends: MyTrend[] = [];
 	welcomes: MyWelcome[] = [];
-	head:Myhead[] = []
+	head: Myhead[] = [];
 	currentTrendIndex: number = 0;
 	currentTrendIndex2: number = 1;
 	currentTrendIndex3: number = 2;
