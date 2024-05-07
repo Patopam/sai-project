@@ -1,23 +1,26 @@
-section{
-    width: 500px;
-    height: 700px;
-    background-color: #25245E;
-    position: relative;
-    left: 30%;
-    top: 10%;
-    border-radius: 20px;
-    
-}     
-.box-signUp{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-}  
-h1{
-    margin: 0;
-    font-size: 30px;
-    color: #FFF;
-    font-family: Satoshi;
+section {
+	width: 500px;
+	height: 700px;
+	background-color: #25245e;
+	position: relative;
+	left: 30%;
+	top: 10%;
+	border-radius: 20px;
+}
+.box-signUp {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+}
+h1 {
+	margin: 0;
+	margin: 0;
+	color: #fff;
+	font-family: Satoshi;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
 }
