@@ -1,6 +1,6 @@
-import ImgSignin from '../../../assets/Sign Up img.png';
-import Styles from './Sign-In.css';
-class SingIn extends HTMLElement {
+import ImgLogin from '../../../assets/Log In img.png';
+import Styles from './Log-In.css';
+class LogIn extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -23,14 +23,14 @@ class SingIn extends HTMLElement {
 
 			<section>
 			<div class="box-img">
-				<img src="${ImgSignin}" alt="logosai"  draggable="false"/>
+				<img src="${ImgLogin}" alt="logosai"  draggable="false"/>
 			</div>
-				<custom-backforms></custom-backforms>
+				<custom-lbackforms></custom-lbackforms>
 			</section>
 			`;
 		}
 	}
 }
 
-customElements.define('custom-singin', SingIn);
-export default SingIn;
+customElements.define('custom-login', LogIn);
+export default LogIn;

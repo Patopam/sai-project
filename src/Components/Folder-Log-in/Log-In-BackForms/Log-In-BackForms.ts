@@ -1,5 +1,5 @@
-import Styles from './Sign-In-Button.css';
-class SingButton extends HTMLElement {
+import Styles from './Log-In-BackForms.css';
+class LogInBackForms extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -12,27 +12,29 @@ class SingButton extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
-			
+
 			const css = this.ownerDocument.createElement('style');
 			css.innerHTML = Styles;
 			this.shadowRoot?.appendChild(css);
-		
+
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
 
 			<section>
 
-			<button class="Button-Continue">Continue</button>
-				<div class="Box-LogIn">
-					<p>Already have an occount?</p>
-					<button class="Button-LogIn">Log in</button>
+				<div class="box-LogUp">
+					<h1>Welcome Back</h1>
 				</div>
-				
+				<div class="names">
+
+				<custom-formsl></custom-formsl>
+				<custom-logbutton></custom-logbutton>
+				</div>
 			</section>
 			`;
 		}
 	}
 }
 
-customElements.define('custom-singbutton', SingButton);
-export default SingButton;
+customElements.define('custom-lbackforms', LogInBackForms);
+export default LogInBackForms;
