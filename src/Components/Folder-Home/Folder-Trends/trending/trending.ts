@@ -1,3 +1,5 @@
+import { addObserver, appState, dispatch } from '../../../../store/store';
+import { navigate } from '../../../../store/actions';
 import Styles from './trending.css';
 class trending extends HTMLElement {
 	constructor() {
@@ -7,25 +9,29 @@ class trending extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		const ChangeHome = this.shadowRoot?.querySelector('#showmt');
+		ChangeHome?.addEventListener('click', () => {
+			dispatch(navigate('Home'));
+		});
 	}
 
 	render() {
-		if  (this.shadowRoot) {
+		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
-			
+
 			const css = this.ownerDocument.createElement('style');
 			css.innerHTML = Styles;
 			this.shadowRoot?.appendChild(css);
-			
+
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
-          
+
 			<div class="box-trending">
 				<div class="now">
 					<h2>TRENDING RIGHT NOW</h2>
 				</div>
 				<div class="Show">
-					<button>Show more</button>
+					<button id:"showmt">Show more</button>
 				</div>
 			</div>
             `;

@@ -3,7 +3,7 @@ import { trendData } from '../data/trendsData';
 import Mytag, { AttributeTa } from '../Components/Folder-Tags/tags/tags';
 import stylesB from './trend.css';
 
-class AppContainer extends HTMLElement {
+class AppTrend extends HTMLElement {
 	tags: Mytag[] = [];
 
 	constructor() {
@@ -44,4 +44,4 @@ class AppContainer extends HTMLElement {
 	}
 }
 
-customElements.define('app-container', AppContainer);
+customElements.define('app-trends', AppTrend);
