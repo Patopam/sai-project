@@ -1,6 +1,6 @@
 import './Components/indexP';
-import { UserData } from '../src/data/data';
-import Myfollower, { Attribute3 } from '../src/Components/Folder-Followers/follows/follows';
+import { UserData } from '../data/data';
+import Myfollower, { Attribute3 } from '../Components/Folder-Followers/follows/follows';
 import stylesA from './styleA.css';
 
 class AppContainer extends HTMLElement {
