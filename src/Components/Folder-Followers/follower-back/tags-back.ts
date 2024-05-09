@@ -1,6 +1,6 @@
 import Styles from './tags-back.css';
 
-class TagsBack extends HTMLElement {
+class FollBack extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -35,6 +35,6 @@ class TagsBack extends HTMLElement {
 	}
 }
 
-customElements.define('custom-back', TagsBack);
+customElements.define('custom-back', FollBack);
 
-export default TagsBack;
+export default FollBack;
