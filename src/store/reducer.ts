@@ -1,13 +1,11 @@
-export const reducer = (currentAction, currentState) => {
+export const reducer = (currentAction: any, currentState: any) => {
 
-    const {actio, payload } = currentAction;
+    const {action, payload } = currentAction;
 
-    switch (actio) {
-        case '':
-            
-            break;
-    
-        default:
+    switch (action) {
+        case 'navigate':
+            currentState.screen = payload;
             break;
     }
+    return currentState
 };

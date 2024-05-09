@@ -32,5 +32,5 @@ class SingIn extends HTMLElement {
 	}
 }
 
-customElements.define('custom-singin', SingIn);
+customElements.define('custom-signin', SingIn);
 export default SingIn;

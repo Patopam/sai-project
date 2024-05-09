@@ -1,6 +1,7 @@
 import Styles from './Sign-In-Button.css';
 
-import { addObserver, appState } from '../../../store/store';
+import { addObserver, appState, dispatch } from '../../../store/store';
+import { navigate } from '../../../store/actions';
 
 class SingButton extends HTMLElement {
 	constructor() {
@@ -8,14 +9,18 @@ class SingButton extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 		addObserver(this);
 
-
+	}
 	connectedCallback() {
 		this.render();
 
 		const ChangeHome = this.shadowRoot?.querySelector('#changeHome');
 		ChangeHome?.addEventListener('click', () => {
-
-		})
+			dispatch(navigate('Home'));
+		});
+		const changeLogIn = this.shadowRoot?.querySelector('#changeLogIn');
+		changeLogIn?.addEventListener('click', () => {
+			dispatch(navigate('LogIn'));
+		});
 	} 
 
 
