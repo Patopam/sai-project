@@ -1,4 +1,3 @@
-
 export { default as user } from './Folder-Home/user/user';
 export { default as feed } from './Folder-Home/Folder-Feed/feed/feed';
 export { default as followers } from './Folder-Home/Folder-Followers/Followers/Followers';
@@ -20,4 +19,5 @@ export { default as LogIn } from './Folder-Log-in/Log-In/Log-In';
 export { default as LogInBackForms } from './Folder-Log-in/Log-In-BackForms/Log-In-BackForms';
 export { default as FormsL } from './Folder-Log-in/Log-In-Forms/Log-In-Forms';
 export { default as LogButton } from './Folder-Log-in/Log-In-Button/Log-In-Button';
-
+export { default as TagsBack } from './Folder-Tags/Tags-back/tags-back';
+export { default as tags } from './Folder-Tags/tags/tags';
