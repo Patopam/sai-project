@@ -1,3 +1,5 @@
+import { addObserver, appState, dispatch } from '../../../store/store';
+import { navigate } from '../../../store/actions';
 import Styles from './tags-back.css';
 
 class TagsBack extends HTMLElement {
@@ -8,6 +10,10 @@ class TagsBack extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		const ChangeHome = this.shadowRoot?.querySelector('#goback');
+		ChangeHome?.addEventListener('click', () => {
+			dispatch(navigate('Home'));
+		});
 	}
 
 	render() {
@@ -34,7 +40,7 @@ class TagsBack extends HTMLElement {
                         <h2>Come back tomorrow for more inspiration</h2>
                     </div>
                     <div class="go">
-                        <button>Back to Home</button>
+                        <button id:"goback">Back to Home</button>
                     </div>
 
                 </div>
