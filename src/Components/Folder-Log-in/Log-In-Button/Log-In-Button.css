@@ -20,19 +20,19 @@ section {
 	color: #d9d9d9;
 	background-color: #171640; /* Cambia el color de fondo cuando se presiona el botón */
 }
-.Box-LogIn {
+.Box-SingIn {
 	display: flex;
 	color: #7796f1;
 	font-size: 18px;
 	font-family: Satoshi;
 }
-.Button-LogIn {
+.Button-SingIn {
 	background-color: transparent;
 	border: transparent;
 	font-size: 18px;
 	color: #ffffff;
 }
 
-.Button-LogIn:active {
+.Button-SingIn:active {
 	color: #171640;
 }
