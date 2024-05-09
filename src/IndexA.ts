@@ -2,6 +2,7 @@ import './screens/home';
 import './screens/sign-in';
 import './screens/log-in';
 import '../src/Components/indexP';
+import './screens/followers';
 import './screens/trend';
 import { appState } from './store/store';
 import { addObserver } from './store/store';
@@ -36,6 +37,10 @@ class AppContainer extends HTMLElement {
 			case 'Trend':
 				const AppTrend = this.ownerDocument.createElement('app-trends');
 				this.shadowRoot?.appendChild(AppTrend);
+				break;
+			case 'Follow':
+				const AppFollow = this.ownerDocument.createElement('app-follow');
+				this.shadowRoot?.appendChild(AppFollow);
 				break;
 			default:
 				break;

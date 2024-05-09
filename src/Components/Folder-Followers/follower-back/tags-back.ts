@@ -2,17 +2,18 @@ import { addObserver, appState, dispatch } from '../../../store/store';
 import { navigate } from '../../../store/actions';
 import Styles from './tags-back.css';
 
-class FollBack extends HTMLElement {
+class FollBacki extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this);
 	}
 
 	connectedCallback() {
 		this.render();
-		const ChangeHome = this.shadowRoot?.querySelector('#showf');
+		const ChangeHome = this.shadowRoot?.querySelector('#goback');
 		ChangeHome?.addEventListener('click', () => {
-			dispatch(navigate('Follow'));
+			dispatch(navigate('Home'));
 		});
 	}
 
@@ -32,7 +33,7 @@ class FollBack extends HTMLElement {
                     </div>
 
                     <div class="go">
-                        <button id="showf">Back to Home</button>
+                        <button id="goback">Back to Home</button>
                     </div>
 
                 </div>
@@ -41,6 +42,6 @@ class FollBack extends HTMLElement {
 	}
 }
 
-customElements.define('custom-back', FollBack);
+customElements.define('custom-backi', FollBacki);
 
-export default FollBack;
+export default FollBacki;

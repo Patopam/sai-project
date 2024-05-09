@@ -23,4 +23,4 @@ export { default as TagsBack } from './Folder-Tags/Tags-back/tags-back';
 export { default as tags } from './Folder-Tags/tags/tags';
 export { default as headexplore } from './Folder-Tags/head/head';
 export { default as FollBack } from './Folder-Followers/follower-back/tags-back';
-export { default as follows } from './Folder-Followers/follows/follows';
+export { default as TagsBacki } from './Folder-Followers/follower-back/tags-back';

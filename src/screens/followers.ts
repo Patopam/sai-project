@@ -1,4 +1,4 @@
-import './Components/indexP';
+import '../Components/indexP';
 import { UserData } from '../data/data';
 import Myfollower, { Attribute3 } from '../Components/Folder-Followers/follows/follows';
 import stylesA from './followers.css';
@@ -29,7 +29,7 @@ class AppFollow extends HTMLElement {
 			<style>
 			${stylesA}
 		</style>
-			<custom-back></custom-back>
+			<custom-backi></custom-backi>
 			<custom-head></custom-head>
 
 
