@@ -16,4 +16,8 @@ export { default as SingIn } from './Folder-Sign-in/Sign-In/Sign-In';
 export { default as SingInBackForms } from './Folder-Sign-in/Sign-In-BackForms/Sign-In-BackForms';
 export { default as Forms } from './Folder-Sign-in/Sign-In-Forms/Sign-In-Forms';
 export { default as SingButton } from './Folder-Sign-in/Sign-In-Button/Sign-In-Button';
+export { default as LogIn } from './Folder-Log-in/Log-In/Log-In';
+export { default as LogInBackForms } from './Folder-Log-in/Log-In-BackForms/Log-In-BackForms';
+export { default as FormsL } from './Folder-Log-in/Log-In-Forms/Log-In-Forms';
+export { default as LogButton } from './Folder-Log-in/Log-In-Button/Log-In-Button';
 
