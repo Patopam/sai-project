@@ -1,4 +1,4 @@
-import Styles from './folloButton.css';
+import Styles from './follow-button.css';
 class folloButton extends HTMLElement {
 	constructor() {
 		super();
