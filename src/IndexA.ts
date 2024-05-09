@@ -39,6 +39,13 @@ class AppContainer extends HTMLElement {
 				break;
 			default:
 				break;
+				case 'Trend':
+					const AppTrend = this.ownerDocument.createElement('app-trends');
+					this.shadowRoot?.appendChild(AppTrend);
+					break;
+				default:
+					break;
+				
 		}
 	}
 }
