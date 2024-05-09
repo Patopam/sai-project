@@ -6,7 +6,7 @@ export enum Attribute6 {
 	'uid' = 'uid',
 }
 
-class head extends HTMLElement {
+class headexplore extends HTMLElement {
 	image?: string;
 	username?: string;
 	uid?: number;
@@ -91,5 +91,5 @@ class head extends HTMLElement {
 	}
 }
 
-customElements.define('custom-head', head);
-export default head;
+customElements.define('custom-headexplore', headexplore);
+export default headexplore;

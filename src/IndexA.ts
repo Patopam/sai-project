@@ -1,7 +1,7 @@
 import './screens/home';
 import './screens/sign-in';
 import './screens/log-in';
-import './Components/indexP';
+import '../src/Components/indexP';
 import './screens/trend';
 import { appState } from './store/store';
 import { addObserver } from './store/store';
@@ -33,7 +33,7 @@ class AppContainer extends HTMLElement {
 				const LogIn = this.ownerDocument.createElement('app-login');
 				this.shadowRoot?.appendChild(LogIn);
 				break;
-			case 'LogIn':
+			case 'Trend':
 				const AppTrend = this.ownerDocument.createElement('app-trends');
 				this.shadowRoot?.appendChild(AppTrend);
 				break;

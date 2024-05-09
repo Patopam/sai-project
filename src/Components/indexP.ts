@@ -21,3 +21,4 @@ export { default as FormsL } from './Folder-Log-in/Log-In-Forms/Log-In-Forms';
 export { default as LogButton } from './Folder-Log-in/Log-In-Button/Log-In-Button';
 export { default as TagsBack } from './Folder-Tags/Tags-back/tags-back';
 export { default as tags } from './Folder-Tags/tags/tags';
+export { default as headexplore } from './Folder-Tags/head/head';

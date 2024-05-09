@@ -1,4 +1,4 @@
-import './Components/indexP';
+import '../Components/indexP';
 import { trendData } from '../data/trendsData';
 import Mytag, { AttributeTa } from '../Components/Folder-Tags/tags/tags';
 import stylesB from './trend.css';
@@ -29,7 +29,7 @@ class AppTrend extends HTMLElement {
 			${stylesB}
 		</style>
 			<custom-back></custom-back>
-			<custom-head></custom-head>
+			<custom-headexplore></custom-headexplore>
 
 
 			`;

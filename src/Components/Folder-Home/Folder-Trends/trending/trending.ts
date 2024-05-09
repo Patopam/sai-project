@@ -11,7 +11,7 @@ class trending extends HTMLElement {
 		this.render();
 		const ChangeHome = this.shadowRoot?.querySelector('#showmt');
 		ChangeHome?.addEventListener('click', () => {
-			dispatch(navigate('Home'));
+			dispatch(navigate('Trend'));
 		});
 	}
 
@@ -31,7 +31,7 @@ class trending extends HTMLElement {
 					<h2>TRENDING RIGHT NOW</h2>
 				</div>
 				<div class="Show">
-					<button id:"showmt">Show more</button>
+					<button id="showmt">Show more</button>
 				</div>
 			</div>
             `;

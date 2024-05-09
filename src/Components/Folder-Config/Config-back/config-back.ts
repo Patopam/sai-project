@@ -1,8 +1,8 @@
 import { addObserver, appState, dispatch } from '../../../store/store';
 import { navigate } from '../../../store/actions';
-import Styles from './tags-back.css';
+import Styles from './config-back.css';
 
-class TagsBack extends HTMLElement {
+class ConfigBack extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -18,9 +18,6 @@ class TagsBack extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			const currentDate = new Date();
-			const dayOfWeek = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
-
 			this.shadowRoot.innerHTML = '';
 
 			const css = this.ownerDocument.createElement('style');
@@ -29,10 +26,7 @@ class TagsBack extends HTMLElement {
 
 			this.shadowRoot.innerHTML = `
                 <style> ${Styles}</style>
-                <div class="title">
-                    <div class="day">
-                        <h3>${dayOfWeek}</h3>
-                    </div>
+                <div class="boxes">
                     <div class="now">
                         <h1>Keep inspiring yourself</h1>
                     </div>
@@ -49,6 +43,6 @@ class TagsBack extends HTMLElement {
 	}
 }
 
-customElements.define('custom-back', TagsBack);
+customElements.define('custom-conba', ConfigBack);
 
-export default TagsBack;
+export default ConfigBack;
