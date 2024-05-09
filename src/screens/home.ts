@@ -1,12 +1,12 @@
 import { UserData } from '../data/data';
 import { trendData } from '../data/trendsData';
-import './Components/indexP';
+import '../Components/indexP';
 import MyUser, { Attribute } from '../Components/Folder-Home/user/user';
 import MyFeed, { Attribute2 } from '../Components/Folder-Home/Folder-Feed/feed/feed';
 import Myfollower, { Attribute3 } from '../Components/Folder-Home/Folder-Followers/Followers/Followers';
 import MyTrend, { Attribute4 } from '../Components/Folder-Home/Folder-Trends/trends/trend';
 import MyWelcome, { Attribute5 } from '../Components/Folder-Home/Folder-Welcome/welcome/welcome';
-import stylesA from './styleA.css';
+import stylesA from './home.css';
 import user from '../Components/Folder-Home/user/user';
 
 import Myhead, { Attribute6 } from '../Components/Folder-Home/head/head';

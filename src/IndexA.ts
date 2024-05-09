@@ -1,5 +1,6 @@
 import './screens/home';
-import './screens/sing-in';
+import './screens/sign-in';
+import './screens/log-in';
 import './Components/indexP';
 import { appState } from './store/store';
 import { addObserver } from './store/store';
@@ -16,17 +17,27 @@ class AppContainer extends HTMLElement {
         this.render()
     }
     render(){
-        switch (appState.screen) {
-            case 'SignIn':
-                const card = this.ownerDocument.createElement('app-singin')
-                this.shadowRoot?.appendChild(card)
-                break;
-        
-            default:
-                break;
-        }
+        if(this.shadowRoot) this.shadowRoot.innerHTML = '';
+            switch (appState.screen) {
+                case 'SignIn':
+                    const SignIn = this.ownerDocument.createElement('app-signin')
+                    this.shadowRoot?.appendChild(SignIn)
+                    break;
+
+                    case 'Home':
+                        const Home = this.ownerDocument.createElement('app-home')
+                        this.shadowRoot?.appendChild(Home)
+                        break;
+
+                        case 'LogIn':
+                            const LogIn = this.ownerDocument.createElement('app-login')
+                            this.shadowRoot?.appendChild(LogIn)
+                            break;
+                default:
+                    break;
+            }
       
-    }
+        }
     
     }
     

@@ -1,12 +1,26 @@
 import Styles from './Log-In-Button.css';
+
+import { addObserver, appState, dispatch } from '../../../store/store';
+import { navigate } from '../../../store/actions';
 class LogButton extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this);
 	}
 
 	connectedCallback() {
 		this.render();
+		
+		const ChangeHome = this.shadowRoot?.querySelector('#changeHome');
+		ChangeHome?.addEventListener('click', () => {
+			dispatch(navigate('Home'));
+		});
+
+		const changeSignIn = this.shadowRoot?.querySelector('#changeSignIn');
+		changeSignIn?.addEventListener('click', () => {
+			dispatch(navigate('SignIn'));
+		});
 	}
 
 	render() {
@@ -22,10 +36,10 @@ class LogButton extends HTMLElement {
 
 			<section>
 
-			<button class="Button-Continue">Continue</button>
+			<button id="changeHome" class="Button-Continue">Continue</button>
 				<div class="Box-SingIn">
-					<p>Don’t have a account?</p>
-					<button class="Button-SingIn">Sign in</button>
+					<p>Don't have a account?</p>
+					<button id="changeSignIn" class="Button-SingIn">Sign in</button>
 				</div>
 
 			</section>

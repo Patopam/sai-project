@@ -1,4 +1,4 @@
-class SingIn extends HTMLElement {
+class login extends HTMLElement {
 
 constructor() {
     super();
@@ -10,10 +10,10 @@ connectedCallback(){
 }
 render(){
     if (this.shadowRoot) this.shadowRoot.innerHTML= ``;
-    const card = this.ownerDocument.createElement('custom-singin')
+    const card = this.ownerDocument.createElement('custom-login')
     this.shadowRoot?.appendChild(card)
 }
 
 }
 
-customElements.define('app-singin', SingIn)
+customElements.define('app-login', login)

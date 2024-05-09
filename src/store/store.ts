@@ -1,17 +1,17 @@
 import { reducer } from "./reducer";
-export let appState: AppState = {
+export let appState = {
     screen:'SignIn',
 };
 
 
-let observers: Observer[] = [];
+let observers: any = [];
 
 export const dispatch = (action: any) => {
 	const clone = JSON.parse(JSON.stringify(appState));
 	appState = reducer(action, clone);
-	observers.forEach((o) => o.render());
+	observers.forEach((o: any) => o.render());
 };
 
-export const addObserver = (ref: Observer) => {
+export const addObserver = (ref: any) => {
 	observers = [...observers, ref];
 };
