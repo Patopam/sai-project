@@ -3,7 +3,7 @@ import { UserData } from '../data/data';
 import Myfollower, { Attribute3 } from '../Components/Folder-Followers/follows/follows';
 import stylesA from './followers.css';
 
-class AppContainer extends HTMLElement {
+class AppFollow extends HTMLElement {
 	follows: Myfollower[] = [];
 
 	constructor() {
@@ -44,4 +44,4 @@ class AppContainer extends HTMLElement {
 	}
 }
 
-customElements.define('app-container', AppContainer);
+customElements.define('app-follow', AppFollow);
