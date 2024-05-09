@@ -1,5 +1,5 @@
 .welBar {
-	width: 685px;
+	width: 850px;
 	height: 120px;
 	flex-shrink: 0;
 	border-radius: 20px;
@@ -22,7 +22,7 @@
 	left: 100px;
 	border-radius: 40px;
 	box-sizing: border-box;
-	width: 560px;
+	width: 720px;
 	height: 45px;
 	flex-shrink: 0;
 	border-radius: 5px;
