@@ -37,11 +37,6 @@ class AppContainer extends HTMLElement {
 				const AppTrend = this.ownerDocument.createElement('app-trends');
 				this.shadowRoot?.appendChild(AppTrend);
 				break;
-				break;
-			case 'Follow':
-				const AppFollow = this.ownerDocument.createElement('app-follow');
-				this.shadowRoot?.appendChild(AppFollow);
-				break;
 			default:
 				break;
 		}
