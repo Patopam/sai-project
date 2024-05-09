@@ -1,7 +1,7 @@
 import './Components/indexP';
 import { UserData } from '../data/data';
 import Myfollower, { Attribute3 } from '../Components/Folder-Followers/follows/follows';
-import stylesA from './styleA.css';
+import stylesA from './followers.css';
 
 class AppContainer extends HTMLElement {
 	follows: Myfollower[] = [];
