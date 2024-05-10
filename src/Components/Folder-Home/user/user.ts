@@ -35,7 +35,7 @@ class user extends HTMLElement {
 	}
 
 	connectedCallback() {
-		const ChangeHome = this.shadowRoot?.querySelector('#goback');
+		const ChangeHome = this.shadowRoot?.querySelector('#myprof');
 		ChangeHome?.addEventListener('click', () => {
 			dispatch(navigate('Home'));
 		});
@@ -83,7 +83,7 @@ class user extends HTMLElement {
 						<h1>${this.followers}</h1>
 						<h2>Followers</h2>
 						</div>
-						<button class="myProfile">My Profle</button>
+						<button id= "myprof"class="myProfile">My Profle</button>
 
 						</section>
 
