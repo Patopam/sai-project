@@ -19,6 +19,7 @@ class user extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this);
 	}
 
 	static get observedAttributes() {
