@@ -7,7 +7,6 @@ class ConfBack extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 		addObserver(this);
-
 	}
 
 	connectedCallback() {
@@ -16,7 +15,6 @@ class ConfBack extends HTMLElement {
 			dispatch(navigate('Home'));
 		});
 		this.render();
-
 	}
 
 	render() {
@@ -33,14 +31,14 @@ class ConfBack extends HTMLElement {
                 <style> ${Styles}</style>
                 <div class="coonfi">
 								<div class="back">
-								<button><i class='bx bx-chevron-left bx-md'></i></button>
+								<button id="goback"><i class='bx bx-chevron-left bx-md'></i></button>
 						</div>
 						<custom-coforms></custom-coforms>
 								<div class="done">
                         <button>Done</button>
                     </div>
                     <div class="exit">
-                        <button>Close session</button>
+                        <button >Close session</button>
                     </div>
 
                 </div>
