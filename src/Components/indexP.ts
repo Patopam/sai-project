@@ -24,3 +24,7 @@ export { default as tags } from './Folder-Tags/tags/tags';
 export { default as headexplore } from './Folder-Tags/head/head';
 export { default as FollBack } from './Folder-Followers/follower-back/tags-back';
 export { default as TagsBacki } from './Folder-Followers/follower-back/tags-back';
+export { default as ConfBack } from './Config/config-back/config.back';
+export { default as heade } from './Config/head/head';
+export { default as CoForms } from './Config/config-forms/config-forms';
+export { default as CoUser } from './Config/config-user/config-user';

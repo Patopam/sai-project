@@ -4,6 +4,7 @@ import './screens/log-in';
 import '../src/Components/indexP';
 import './screens/followers';
 import './screens/trend';
+import './screens/user';
 import { appState } from './store/store';
 import { addObserver } from './store/store';
 
@@ -42,6 +43,10 @@ class AppContainer extends HTMLElement {
 				const AppFollow = this.ownerDocument.createElement('app-follow');
 				this.shadowRoot?.appendChild(AppFollow);
 				break;
+			case 'User':
+				const AppUser = this.ownerDocument.createElement('app-user');
+				this.shadowRoot?.appendChild(AppUser);
+				break;
 			default:
 				break;
 		}
@@ -49,4 +54,3 @@ class AppContainer extends HTMLElement {
 }
 
 customElements.define('app-container', AppContainer);
-
