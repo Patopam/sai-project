@@ -1,0 +1,39 @@
+.title2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 8%;
+	margin-bottom: 9%;
+	margin-left: 25%;
+	width: 1000px;
+
+	background-color: #25245e; /* Color de fondo del cuadro */
+	padding: 20px; /* Espaciado interno del cuadro */
+	border-radius: 10px; /* Borde redondeado del cuadro */
+}
+
+.title2 h1 {
+	color: #fff;
+	font-family: Satoshi;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-bottom: 1080px; /* Espaciado inferior entre el título y el botón */
+}
+
+.go button {
+	background-color: rgb(255, 255, 255);
+	border-color: transparent;
+	width: 100px;
+	height: 30px;
+	border-radius: 30px;
+	font-family: Satoshi;
+	font-size: 12px;
+}
+
+.go button:active {
+	color: #25245e; /* Cambia el color del texto cuando se presiona */
+	background-color: #7796f1; /* Cambia el color de fondo cuando se presiona */
+}

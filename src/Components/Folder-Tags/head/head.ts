@@ -8,13 +8,13 @@ export enum Attribute6 {
 	'uid' = 'uid',
 }
 
-class head extends HTMLElement {
-	image?: string
+class headexplore extends HTMLElement {
+	image?: string;
 	username?: string;
 	uid?: number;
 
 	constructor() {
-		super();	
+		super();
 		this.attachShadow({ mode: 'open' });
 		addObserver(this);
 	}
@@ -76,7 +76,7 @@ class head extends HTMLElement {
 
                             <div class="box-home" >
                                 <button><i class='bx bxs-home'></i></i></button>
-                                <p>Home</p>
+                                <p>Explore</p>
                             </div>
                             <button><i class='bx bxs-chat bx-tada-hover'></i></button>
                             <button><i class='bx bxs-bell bx-tada-hover'></i></button>
@@ -88,7 +88,7 @@ class head extends HTMLElement {
                             <p class="name">@${this.username}</p>
                         </div>
                         <div class="box-menu">
-                            <button id="mypro"><i class='bx bxs-cog bx-spin-hover' ></i></button>
+							<button id="mypro"><i class='bx bxs-cog bx-spin-hover' ></i></button>
 
                         </div>
 					</div>
@@ -98,5 +98,5 @@ class head extends HTMLElement {
 	}
 }
 
-customElements.define('custom-head', head);
-export default head;
+customElements.define('custom-headexplore', headexplore);
+export default headexplore;
