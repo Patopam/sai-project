@@ -45,7 +45,8 @@ class tags extends HTMLElement {
 				<div class="componente">
 					<div class="tag">
 						<img class="imagen-tag" src="${this.image}"></img>
-            <h2>${this.trend}</h2>
+            			<h2>${this.trend}</h2>
+					</div>
 				</div>
       `;
 		}

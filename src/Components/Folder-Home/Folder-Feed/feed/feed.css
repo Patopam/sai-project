@@ -22,8 +22,8 @@ p{
 }
 .imagen-post{
     
-    height: 97%;
-    width: 90%;
+    height: 250px;
+    width: 200px;
     border-radius: 8px;
     border: 1px solid #000;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 

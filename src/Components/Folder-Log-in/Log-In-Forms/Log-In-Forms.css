@@ -41,3 +41,22 @@
 	align-items: left;
 	justify-content: left;
 }
+
+@media (max-width: 400px) {
+	.box-Forms {
+		margin-left: 15px;
+		margin-top: 10%;
+	}
+
+	.box-Forms h1 {
+	
+		left: 10px;
+	}
+
+	.Forms {
+		
+		height: 30px;
+	
+	}
+}
+

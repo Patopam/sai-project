@@ -4,13 +4,15 @@
 	position: absolute;
 	width: 50%;
 	height: 50%;
-	left: 26%;
+	left: 25%;
 	right: 25%;
 	top: 27%;
 	display: flex;
 	flex-direction: row;
 	gap: 10px;
 	flex-wrap: wrap;
+	justify-content: center;
+
 	/*background-color: rgb(255, 0, 0);*/
 }
 
@@ -20,6 +22,7 @@
 		height: 90%;
 		left: 5%;
 		right: 10%;
+		top: 15%;
 	}
 }
 @media (max-width: 400px) {
@@ -28,6 +31,7 @@
 		height: 90%;
 		display: flex;
 		justify-content: center;
+		
 	}
 }
 
@@ -119,6 +123,7 @@ nav-app {
 	position: absolute;
 	left: 26%;
 	top: 110px;
+	width: 47%;
 }
 
 @media (max-width: 800px) {
