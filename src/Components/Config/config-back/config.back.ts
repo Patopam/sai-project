@@ -10,11 +10,15 @@ class ConfBack extends HTMLElement {
 	}
 
 	connectedCallback() {
-		const ChangeHome = this.shadowRoot?.querySelector('#goback');
+		this.render();
+		const ChangeHome = this.shadowRoot?.querySelector('#lerorle');
 		ChangeHome?.addEventListener('click', () => {
 			dispatch(navigate('Home'));
 		});
-		this.render();
+		const Changies = this.shadowRoot?.querySelector('#bye');
+		Changies?.addEventListener('click', () => {
+			dispatch(navigate('LogIn'));
+		});
 	}
 
 	render() {
@@ -31,14 +35,14 @@ class ConfBack extends HTMLElement {
                 <style> ${Styles}</style>
                 <div class="coonfi">
 								<div class="back">
-								<button id="goback"><i class='bx bx-chevron-left bx-md'></i></button>
+								<button id="lerorle"><i class='bx bx-chevron-left bx-lg'></i></button>
 						</div>
 						<custom-coforms></custom-coforms>
 								<div class="done">
                         <button>Done</button>
                     </div>
                     <div class="exit">
-                        <button >Close session</button>
+                        <button id="bye" >Close session</button>
                     </div>
 
                 </div>

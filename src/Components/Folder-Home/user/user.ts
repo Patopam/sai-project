@@ -1,5 +1,4 @@
-import { addObserver, appState, dispatch } from '../../../store/store';
-import { navigate } from '../../../store/actions';
+
 import Styles from './user.css';
 export enum Attribute {
 	'image' = 'image',
@@ -19,7 +18,6 @@ class user extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-		addObserver(this);
 	}
 
 	static get observedAttributes() {
@@ -36,10 +34,7 @@ class user extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
-		const ChangeHome = this.shadowRoot?.querySelector('#mypro');
-		ChangeHome?.addEventListener('click', () => {
-			dispatch(navigate('User'));
-		});
+
 	}
 
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
@@ -84,7 +79,7 @@ class user extends HTMLElement {
 						<h2>Followers</h2>
 						</div>
 
-						<button id="mypro">My Profile</button>
+						<button >My Profile</button>
 
 						</section>
 
