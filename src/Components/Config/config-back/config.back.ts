@@ -1,3 +1,5 @@
+import { addObserver, appState, dispatch } from '../../../store/store';
+import { navigate } from '../../../store/actions';
 import Styles from './config-back.css';
 
 class ConfBack extends HTMLElement {
