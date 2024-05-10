@@ -15,7 +15,9 @@ class CoForms extends HTMLElement {
 
 			const css = this.ownerDocument.createElement('style');
 			css.innerHTML = Styles;
+
 			this.shadowRoot?.appendChild(css);	
+
 
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
