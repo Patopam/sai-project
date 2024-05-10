@@ -83,7 +83,7 @@ class user extends HTMLElement {
 						<h1>${this.followers}</h1>
 						<h2>Followers</h2>
 						</div>
-						<nav class="myProfile">My Profle</nav>
+						<button class="myProfile">My Profle</button>
 
 						</section>
 
