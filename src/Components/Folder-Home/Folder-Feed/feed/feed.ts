@@ -1,4 +1,6 @@
 import Styles from './feed.css';
+import { getpost } from '../../../../services/firebase';
+import { imgs } from '../../../../types/img-post';
 export enum Attribute2 {
 	'image' = 'image',
 	'username' = 'username',
@@ -39,7 +41,7 @@ class feed extends HTMLElement {
 		this.render();
 	}
 
-	render() {
+	async render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
 			
@@ -69,6 +71,8 @@ class feed extends HTMLElement {
 
 				</div>
       `;
+
+
 		}
 	}
 }
