@@ -1,0 +1,36 @@
+.componente {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.tag img {
+	height: 300px;
+	width: 300px;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+}
+
+h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.imagen-tag {
+	height: 90%;
+	width: 90%;
+	border-radius: 8px;
+	border: 1px solid #000;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tag h2 {
+	font-family: 'Satoshi';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 19px;
+	color: #ffffff;
+}
