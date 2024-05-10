@@ -4,6 +4,7 @@ import './screens/log-in';
 import '../src/Components/indexP';
 import './screens/followers';
 import './screens/trend';
+import './screens/user';
 import { appState } from './store/store';
 import { addObserver } from './store/store';
 

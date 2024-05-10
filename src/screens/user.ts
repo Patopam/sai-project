@@ -1,7 +1,6 @@
-import './Components/indexP';
+import '../Components/indexP';
 import MyUser, { Attribute3 } from '../Components/Config/config-user/config-user';
 import { UserData } from '../data//data';
-import stylesA from './styleA.css';
 
 class AppUser extends HTMLElement {
 	users: MyUser[] = [];
@@ -26,9 +25,7 @@ class AppUser extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-                <style>
-                    ${stylesA}
-                </style>
+
                 <custom-backed></custom-backed>
                 <custom-heade></custom-heade>
             `;
