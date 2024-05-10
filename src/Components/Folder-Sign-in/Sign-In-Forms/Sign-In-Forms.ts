@@ -12,11 +12,11 @@ class Forms extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
-			
+
 			const css = this.ownerDocument.createElement('style');
 			css.innerHTML = Styles;
 			this.shadowRoot?.appendChild(css);
-		
+
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
 
@@ -28,7 +28,7 @@ class Forms extends HTMLElement {
                 <input class="Forms" type="Passaword" name="Passaword" id="" placeholder="Passaword">
                 <input class="Forms" type="Passaword" name="Passaword" id="" placeholder="Confirm Passaword">
 			</div>
-				
+
 			</section>
 			`;
 		}
