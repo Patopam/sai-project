@@ -27,16 +27,18 @@
 	flex-shrink: 0;
 	border-radius: 5px;
 	background: #393879;
+	border: transparent;
+	font-size: 18px;
+	color: #7796F1;
 }
 
-.text h2 {
-	color: #fff;
-	font-family: Satoshi;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: normal;
-	margin-left: 11px;
+
+::placeholder {
+	color: #7796F1;
+    font-family: Satoshi;
+    font-size: 18px;
+    border-color: transparent; 
+   	padding: 5px;
 }
 
 .welBar {
