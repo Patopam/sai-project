@@ -1,4 +1,5 @@
-
+import { addObserver, appState, dispatch } from '../../../store/store';
+import { navigate } from '../../../store/actions';
 import Styles from './user.css';
 export enum Attribute {
 	'image' = 'image',
