@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc, getDocs  } from "firebase/firestore"; 
+import { collection, addDoc, getDocs  } from "firebase/fires";
 import { users } from "../types/users-sign";
 const firebaseConfig = {
     apiKey: "AIzaSyDgAJvGH4dhqzoRVxqP7xB48nCS9HspO4g",
@@ -24,7 +24,7 @@ export const adduser = async (formData:  Omit<users, 'id'>) => {
   } catch (e) {
     console.error("Error adding document: ", e);
   }
-  
+
 }
 
 

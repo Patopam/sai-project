@@ -1,0 +1,68 @@
+.coonfi {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 682px;
+	height: 800px;
+	background-color: #25245e;
+	padding: 20px;
+	border-radius: 10px;
+	position: absolute;
+	top: 52%;
+	transform: translateY(-50%);
+	left: 50%;
+	margin-left: -341px;
+}
+.back {
+	position: absolute;
+	top: 6%; /* Distancia desde arriba */
+	left: 6%; /* Distancia desde la izquierda */
+}
+
+.back button {
+	background-color: transparent;
+	border: none;
+	color: rgb(255, 255, 255);
+}
+.back button:active {
+	background-color: transparent;
+	border: none;
+	color: #171640; /* Cambia el color del texto cuando se presiona */
+}
+
+.done button {
+	background-color: rgb(255, 255, 255);
+	border-color: transparent;
+	width: 100px;
+	height: 30px;
+	border-radius: 30px;
+	font-family: Satoshi;
+	font-size: 12px;
+}
+
+.done button:active {
+	color: #25245e; /* Cambia el color del texto cuando se presiona */
+	background-color: #7796f1; /* Cambia el color de fondo cuando se presiona */
+}
+
+.exit button {
+	background-color: rgb(255, 255, 255);
+	border-color: transparent;
+	width: 100px;
+	height: 30px;
+	margin-top: 20px;
+	border-radius: 30px;
+	font-family: Satoshi;
+	font-size: 12px;
+}
+
+.exit button:active {
+	color: #25245e; /* Cambia el color del texto cuando se presiona */
+	background-color: #7796f1; /* Cambia el color de fondo cuando se presiona */
+}
+
+custom-coforms {
+	margin-top: 28%;
+	margin-bottom: 5%;
+}
