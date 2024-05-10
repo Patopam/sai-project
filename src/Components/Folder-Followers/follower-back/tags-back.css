@@ -12,6 +12,25 @@
 	padding: 20px; /* Espaciado interno del cuadro */
 	border-radius: 10px; /* Borde redondeado del cuadro */
 }
+@media (max-width: 800px) {
+	.title2 {
+		margin-top: 4%;
+		margin-bottom: 4%;
+		margin-left: 10%;
+		width: 590px;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 400px) {
+	.title2 {
+		margin-top: 4%;
+		margin-bottom: 4%;
+		margin-left: 10%;
+		width: 350px;
+	}
+}
 
 .title2 h1 {
 	color: #fff;

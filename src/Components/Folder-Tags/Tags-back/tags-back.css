@@ -3,6 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
 }
 
 .title h1 {
@@ -13,6 +14,8 @@
 	font-weight: 500;
 	line-height: normal;
 }
+
+
 
 .title h2 {
 	color: #fff;
@@ -39,7 +42,12 @@
 .end {
 	margin-top: 62%;
 }
+.go{
 
+	position: relative;
+
+	top: 90%;
+}
 .go button {
 	background-color: rgb(255, 255, 255);
 	margin-right: 15px;

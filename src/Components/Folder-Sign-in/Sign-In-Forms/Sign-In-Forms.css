@@ -28,3 +28,8 @@
     border-color: transparent; 
    
 }
+@media (max-width: 400px) {
+    section{
+        margin: 5px;
+    } 
+}

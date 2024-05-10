@@ -33,3 +33,19 @@ h1 {
 	line-height: normal;
 	left: 50px;
 }
+
+@media (max-width: 800px) {
+    section{
+        left: 28%;
+        top: 10%;
+    } 
+}
+
+@media (max-width: 400px) {
+    section{
+        width: 350px;
+        height: 650px;
+        left: 5%;
+        top: 10%;
+    } 
+}
