@@ -9,7 +9,7 @@ export enum Attribute6 {
 }
 
 class head extends HTMLElement {
-	image?: string;
+	image?: string
 	username?: string;
 	uid?: number;
 
