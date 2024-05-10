@@ -5,7 +5,7 @@
 .Tnames {
 	display: flex;
 	flex-direction: column;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 .Tnames h2 {

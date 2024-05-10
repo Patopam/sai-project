@@ -29,12 +29,12 @@ class Forms extends HTMLElement {
 		const save = this.shadowRoot?.querySelector('custom-singbutton');
 		save?.addEventListener('click', this.submitform)
 	}
-	chageName(e: any){
-
+	chageName(e: any){	
+		
 		formData.name = e?.target?.value;
-	}
+	}	
 	chageUsername(e: any){
-
+	
 		formData.username = e?.target?.value;
 	}
 	chageEmail(e: any){
@@ -42,13 +42,13 @@ class Forms extends HTMLElement {
 		formData.email = e?.target?.value;
 	}
 	chagePassword(e: any){
-
+		
 		formData.passoword = e?.target?.value;
-	}
+	}	
 	chageConfirmPass(e: any){
-
+		
 		formData.confirmpass = e?.target?.value;
-	}
+	}			
 	submitform(){
 		adduser(formData)
 	}
@@ -56,11 +56,11 @@ class Forms extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
-
+			
 			const css = this.ownerDocument.createElement('style');
 			css.innerHTML = Styles;
 			this.shadowRoot?.appendChild(css);
-
+		
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
 
