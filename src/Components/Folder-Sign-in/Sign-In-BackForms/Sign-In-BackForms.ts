@@ -26,7 +26,7 @@ class SingInBackForms extends HTMLElement {
 					<h1>Sign Up</h1>
 				</div>
 				<custom-forms></custom-forms>
-				<custom-singbutton></custom-singbutton>
+				
 			</section>
 			`;
 		}
