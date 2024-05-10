@@ -35,11 +35,11 @@ class user extends HTMLElement {
 	}
 
 	connectedCallback() {
-		const ChangeHome = this.shadowRoot?.querySelector('#myprof');
+		this.render();
+		const ChangeHome = this.shadowRoot?.querySelector('#mypro');
 		ChangeHome?.addEventListener('click', () => {
 			dispatch(navigate('User'));
 		});
-		this.render();
 	}
 
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
@@ -84,7 +84,7 @@ class user extends HTMLElement {
 						<h2>Followers</h2>
 						</div>
 
-						<button id= "myprof">My Profle</button>
+						<button id="mypro">My Profile</button>
 
 						</section>
 
