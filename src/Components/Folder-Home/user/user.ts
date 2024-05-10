@@ -37,7 +37,7 @@ class user extends HTMLElement {
 	connectedCallback() {
 		const ChangeHome = this.shadowRoot?.querySelector('#myprof');
 		ChangeHome?.addEventListener('click', () => {
-			dispatch(navigate('Home'));
+			dispatch(navigate('User'));
 		});
 		this.render();
 	}

@@ -3,7 +3,7 @@ import MyUser, { Attribute3 } from '../Components/Config/config-user/config-user
 import { UserData } from '../data//data';
 import stylesA from './styleA.css';
 
-class AppContainer extends HTMLElement {
+class AppUser extends HTMLElement {
 	users: MyUser[] = [];
 	currentUserIndex: number = 0;
 
@@ -49,4 +49,4 @@ class AppContainer extends HTMLElement {
 	}
 }
 
-customElements.define('app-container', AppContainer);
+customElements.define('app-user', AppUser);

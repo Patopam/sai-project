@@ -42,6 +42,10 @@ class AppContainer extends HTMLElement {
 				const AppFollow = this.ownerDocument.createElement('app-follow');
 				this.shadowRoot?.appendChild(AppFollow);
 				break;
+				case 'User':
+				const AppFollow = this.ownerDocument.createElement('app-user');
+				this.shadowRoot?.appendChild(AppFollow);
+				break;
 			default:
 				break;
 		}
