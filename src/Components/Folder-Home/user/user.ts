@@ -83,7 +83,8 @@ class user extends HTMLElement {
 						<h1>${this.followers}</h1>
 						<h2>Followers</h2>
 						</div>
-						<button id= "myprof"class="myProfile">My Profle</button>
+
+						<button id= "myprof">My Profle</button>
 
 						</section>
 
