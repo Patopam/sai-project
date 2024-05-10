@@ -11,7 +11,12 @@ class ConfBack extends HTMLElement {
 	}
 
 	connectedCallback() {
+		const ChangeHome = this.shadowRoot?.querySelector('#goback');
+		ChangeHome?.addEventListener('click', () => {
+			dispatch(navigate('Home'));
+		});
 		this.render();
+
 	}
 
 	render() {
