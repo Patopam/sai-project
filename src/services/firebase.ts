@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc, getDocs, } from "firebase/firestore"; 
+import { collection, addDoc, getDocs, } from "firebase/firestore";
 import { users } from "../types/users-sign";
 import { imgs } from "../types/img-post";
 import { Attribute2 } from "../Components/Folder-Home/Folder-Feed/feed/feed";
@@ -30,13 +30,13 @@ export const adduser = async (formData:  Omit<users, 'id'>) => {
   } catch (e) {
     console.error("Error adding document: ", e);
   }
-  
+
 }
 
 export const addpost = async (formDataImg:  Omit<imgs, 'id'>) => {
   //console.log(formDataImg)
   if(!formDataImg.user){
-    return  
+    return
   }
   try {
     const docRef = await addDoc(collection(db, "posts"), formDataImg);
@@ -44,7 +44,7 @@ export const addpost = async (formDataImg:  Omit<imgs, 'id'>) => {
   } catch (e) {
     console.error("Error adding document: ", e);
   }
-  
+
 }
 
 export const getpost = async () => {
@@ -60,7 +60,7 @@ export const getpost = async () => {
 };
 
 
-// const querySnapshot = await getDocs(collection(db, "users"));
-// querySnapshot.forEach((doc) => {
-//   console.log(`${doc.id} => ${doc.data()}`);
-// });
+export const listenpsrts = ( ) => {
+
+  onSnapshot
+}

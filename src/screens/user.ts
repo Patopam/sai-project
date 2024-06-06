@@ -1,10 +1,12 @@
 import '../Components/indexP';
 import MyUser, { Attribute3 } from '../Components/Config/config-user/config-user';
 import { UserData } from '../data//data';
+import Myhead, { Attribute6 } from '../Components/Config/head/head';
 
 class AppUser extends HTMLElement {
 	users: MyUser[] = [];
 	currentUserIndex: number = 0;
+	heade: Myhead[] = [];
 
 	constructor() {
 		super();
@@ -18,6 +20,13 @@ class AppUser extends HTMLElement {
 			UserCard.setAttribute(Attribute3.image, user.image);
 			UserCard.setAttribute(Attribute3.username, user.username);
 			this.users.push(UserCard);
+		});
+
+		UserData.forEach((heade) => {
+			const headcard = this.ownerDocument.createElement('custom-heade') as Myhead;
+			headcard.setAttribute(Attribute6.image, heade.image);
+			headcard.setAttribute(Attribute6.username, heade.username);
+			this.heade.push(headcard);
 		});
 		this.render();
 	}
@@ -42,6 +51,7 @@ class AppUser extends HTMLElement {
 					localStorage.setItem('userImage', newImage);
 				}
 			});
+			this.shadowRoot.appendChild(this.heade[this.currentUserIndex]);
 		}
 	}
 }

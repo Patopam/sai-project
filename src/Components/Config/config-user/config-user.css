@@ -6,7 +6,7 @@
 }
 
 img {
-	position: fixed;
+	position: absolute;
 	top: 18%;
 	left: 50%;
 	transform: translateX(-50%);
@@ -24,7 +24,7 @@ img {
 }
 
 .top h1 {
-	position: fixed;
+	position: absolute;
 	top: 29%;
 	left: 50%;
 	transform: translateX(-50%);
@@ -35,7 +35,7 @@ img {
 }
 
 .top h2 {
-	position: fixed;
+	position: absolute;
 	top: 35%;
 	left: 50%;
 	transform: translateX(-50%);
@@ -44,4 +44,22 @@ img {
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 18.9px;
+}
+
+@media (max-width: 400px) {
+	img {
+		top: 12%;
+	}
+}
+
+@media (max-width: 400px) {
+	.top h1 {
+		top: 25%;
+	}
+}
+
+@media (max-width: 400px) {
+	.top h2 {
+		top: 32%;
+	}
 }

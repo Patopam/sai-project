@@ -10,10 +10,7 @@ import stylesA from './home.css';
 import user from '../Components/Folder-Home/user/user';
 import { getpost } from '../services/firebase';
 import Myhead, { Attribute6 } from '../Components/Folder-Home/head/head';
-import firebase from 'firebase/compat/app';
-import { db} from '../services/firebase';
-import { firebaseConfig } from '../services/firebase';
-import { doc, onSnapshot, collection } from "firebase/firestore";
+
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
 	feeds: MyFeed[] = [];
@@ -36,8 +33,6 @@ class AppContainer extends HTMLElement {
 	}
 
 	async connectedCallback() {
-	
-
 		trendData.forEach((trend) => {
 			const trendCard = this.ownerDocument.createElement('custom-trends') as MyTrend;
 			trendCard.setAttribute(Attribute4.trend, trend.trend);
@@ -54,17 +49,15 @@ class AppContainer extends HTMLElement {
 			UserCard.setAttribute(Attribute.followers, String(user.followers));
 			this.users.push(UserCard);
 		});
-		const hola = await getpost();
-		console.log(hola)
-		hola.forEach((feed) => {
-			const FeedCard = this.ownerDocument.createElement('custom-feed') as MyFeed;
-			FeedCard.setAttribute(Attribute2.image, feed.avatarImg);
-			FeedCard.setAttribute(Attribute2.username, feed.user);
-			FeedCard.setAttribute(Attribute2.postimage, feed.link);
-			this.feeds.push(FeedCard);
-		});
-
-		
+			const data = await getpost();
+			console.log(data);
+			data.forEach((feed) => {
+				const FeedCard = this.ownerDocument.createElement('custom-feed') as MyFeed;
+				FeedCard.setAttribute(Attribute2.image, feed.avatarImg);
+				FeedCard.setAttribute(Attribute2.username, feed.user);
+				FeedCard.setAttribute(Attribute2.postimage, feed.link);
+				this.feeds.push(FeedCard);
+			});
 
 		UserData.forEach((follower) => {
 			const followerCard = this.ownerDocument.createElement('custom-followers') as Myfollower;
