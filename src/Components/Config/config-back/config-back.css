@@ -11,8 +11,7 @@
 	position: absolute;
 	top: 52%;
 	transform: translateY(-50%);
-	left: 50%;
-	margin-left: -341px;
+	left: 32%;
 }
 .back {
 	position: absolute;
@@ -65,4 +64,19 @@
 custom-coforms {
 	margin-top: 28%;
 	margin-bottom: 5%;
+}
+@media (max-width: 800px) {
+	.coonfi {
+		width: 632px;
+		left: 5%;
+		top: 55%;
+	}
+}
+@media (max-width: 400px) {
+	.coonfi {
+		width: 325px;
+		height: 650px;
+		left: 5%;
+		top: 55%;
+	}
 }

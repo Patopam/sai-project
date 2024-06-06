@@ -39,7 +39,11 @@
 .end {
 	margin-top: 62%;
 }
+.go {
+	position: relative;
 
+	top: 90%;
+}
 .go button {
 	background-color: rgb(255, 255, 255);
 	margin-right: 15px;
@@ -55,4 +59,34 @@
 .go button:active {
 	color: #25245e; /* Cambia el color del texto cuando se presiona */
 	background-color: #7796f1; /* Cambia el color de fondo cuando se presiona */
+}
+
+@media (max-width: 400px) {
+	.now h1 {
+		margin-bottom: 0;
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.now {
+		top: 60%;
+	}
+	.title h3 {
+		font-size: 12px;
+	}
+	.end {
+		display: none;
+	}
+	.go button {
+		display: none;
+	}
+}
+
+@media (max-width: 800px) {
+	.end {
+		display: none;
+	}
+	.go button {
+		display: none;
+	}
 }

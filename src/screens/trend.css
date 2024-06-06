@@ -9,3 +9,12 @@
 	gap: 30px;
 	flex-wrap: wrap;
 }
+nav-app {
+	display: none;
+}
+
+@media (max-width: 800px) {
+	nav-app {
+		display: flex;
+	}
+}

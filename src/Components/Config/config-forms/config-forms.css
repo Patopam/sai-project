@@ -25,3 +25,9 @@
 	font-size: 18px;
 	border-color: transparent;
 }
+
+@media (max-width: 400px) {
+	.Forms {
+		width: 300px;
+	}
+}

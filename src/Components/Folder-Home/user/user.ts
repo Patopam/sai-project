@@ -1,4 +1,3 @@
-
 import Styles from './user.css';
 export enum Attribute {
 	'image' = 'image',
@@ -34,7 +33,6 @@ class user extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
-
 	}
 
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
@@ -56,11 +54,11 @@ class user extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
-
+			
 			const css = this.ownerDocument.createElement('style');
 			css.innerHTML = Styles;
 			this.shadowRoot?.appendChild(css);
-
+			
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
 			<section class= "user">
@@ -78,8 +76,7 @@ class user extends HTMLElement {
 						<h1>${this.followers}</h1>
 						<h2>Followers</h2>
 						</div>
-
-						<button >My Profile</button>
+						<nav class="myProfile">My Profle</nav>
 
 						</section>
 

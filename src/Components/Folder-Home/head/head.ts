@@ -14,7 +14,7 @@ class head extends HTMLElement {
 	uid?: number;
 
 	constructor() {
-		super();
+		super();	
 		this.attachShadow({ mode: 'open' });
 		addObserver(this);
 	}

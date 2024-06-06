@@ -1,4 +1,7 @@
 import Styles from './feed.css';
+import { getpost } from '../../../../services/firebase';
+import { imgs } from '../../../../types/img-post';
+
 export enum Attribute2 {
 	'image' = 'image',
 	'username' = 'username',
@@ -34,7 +37,7 @@ class feed extends HTMLElement {
 		this.render();
 	}
 
-	render() {
+	async render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
 
@@ -43,29 +46,48 @@ class feed extends HTMLElement {
 			this.shadowRoot?.appendChild(css);
 
 			this.shadowRoot.innerHTML = `
-			<style> ${Styles}</style>
-
-			<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-				<div class="componente">
-					<div class="info">
-						<img src="${this.image}" class="imagen-usuario"></img>
-						<p>@${this.username}</p>
-					</div>
-					<div class="post">
-						<img class="imagen-post" src="${this.postimage}"></img>
-					</div>
-
-					<div class="box-like">
-						<custom-like></custom-like>
-					</div>
-
-
-
-				</div>
+        <style> ${Styles}</style>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <div class="componente">
+          <div class="info">
+            <img src="${this.image}" class="imagen-usuario"></img>
+            <p>@${this.username}</p>
+          </div>
+          <div class="post">
+            <img class="imagen-post" src="${this.postimage}"></img>
+          </div>
+          <div class="box-like">
+            <custom-like></custom-like>
+          </div>
+        </div>
       `;
+
+			const postImage = this.shadowRoot.querySelector('.post .imagen-post') as HTMLImageElement;
+			postImage.addEventListener('click', this.openPopup.bind(this));
 		}
 	}
+
+	openPopup() {
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.innerHTML = `
+      <div class="popup-content">
+        <img src="${this.postimage}" class="popup-image"></img>
+        <span class="close-popup">&times;</span>
+      </div>
+    `;
+    this.shadowRoot?.appendChild(popup);
+
+    // Agregar clase al body para el fondo oscuro y semitransparente
+    document.body.classList.add('popup-open');
+
+    const closeButton = popup.querySelector('.close-popup') as HTMLElement;
+    closeButton.addEventListener('click', () => {
+      popup.remove();
+      // Quitar la clase del body cuando se cierra el popup
+      document.body.classList.remove('popup-open');
+    });
+}
 }
 
 customElements.define('custom-feed', feed);
