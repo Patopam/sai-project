@@ -1,7 +1,5 @@
-
 import { addObserver, appState, dispatch } from '../../../store/store';
 import { navigate } from '../../../store/actions';
-
 import Styles from './head.css';
 import logosai from '../../../assets/Iconography - Caesarzkn.png';
 export enum Attribute6 {
@@ -18,9 +16,7 @@ class headexplore extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-
 		addObserver(this);
-
 	}
 
 	static get observedAttributes() {
@@ -35,12 +31,10 @@ class headexplore extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
-
 		const ChangeHome = this.shadowRoot?.querySelector('#mypro');
 		ChangeHome?.addEventListener('click', () => {
 			dispatch(navigate('User'));
 		});
-
 	}
 
 	attributeChangedCallback(propName: Attribute6, oldValue: string | undefined, newValue: string | undefined) {
@@ -94,9 +88,7 @@ class headexplore extends HTMLElement {
                             <p class="name">@${this.username}</p>
                         </div>
                         <div class="box-menu">
-
 							<button id="mypro"><i class='bx bxs-cog bx-spin-hover' ></i></button>
-
 
                         </div>
 					</div>
