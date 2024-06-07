@@ -79,6 +79,11 @@ class feed extends HTMLElement {
     `;
 		this.shadowRoot?.appendChild(popup);
 
+		const comment = popup.querySelector('.comment') as HTMLElement;
+		setTimeout(() => {
+			comment.classList.add('show');
+		}, 100);
+
 		// Agregar clase al body para el fondo oscuro y semitransparente
 		document.body.classList.add('popup-open');
 
@@ -94,12 +99,10 @@ class feed extends HTMLElement {
 		const messages = [
 			'¡Qué bonita imagen!',
 			'Me encanta esta foto',
-			'Qué momento tan especial capturado',
 			'¡Hermosa imagen!',
 			'¡Excelente composición!',
 			'Increíble captura',
 			'¡Fascinante imagen!',
-			'¡Que talento!',
 			'¡Me encanta!',
 		];
 		return messages[Math.floor(Math.random() * messages.length)];

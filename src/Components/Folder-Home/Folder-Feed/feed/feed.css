@@ -71,8 +71,8 @@ body.popup-open::after {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 9999;
-	width: 800px;
-	height: 800px;
+	width: 500px;
+	height: 600px;
 	flex-shrink: 0;
 	border-radius: 20px;
 	background: #25245e;
@@ -107,8 +107,7 @@ body.popup-open::after {
 
 .comment {
 	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	left: 30%;
 	color: #fff;
 	font-family: 'Satoshi';
 	font-style: normal;
@@ -118,4 +117,61 @@ body.popup-open::after {
 	max-width: 90%;
 	overflow-wrap: break-word;
 	text-align: center;
+}
+
+@keyframes tada {
+	0% {
+		transform: scale(1);
+	}
+	5%,
+	10% {
+		transform: scale(0.98) rotate(-1deg);
+	}
+	15%,
+	20% {
+		transform: scale(1.02) rotate(1deg);
+	}
+	25%,
+	30% {
+		transform: scale(0.99) rotate(-1deg);
+	}
+	35%,
+	40% {
+		transform: scale(1.01) rotate(1deg);
+	}
+	45%,
+	50% {
+		transform: scale(0.999) rotate(-1deg);
+	}
+	55%,
+	60% {
+		transform: scale(1.001) rotate(1deg);
+	}
+	65%,
+	70% {
+		transform: scale(1.0001) rotate(-1deg);
+	}
+	75%,
+	80% {
+		transform: scale(1.0001) rotate(1deg);
+	}
+	85%,
+	90% {
+		transform: scale(1) rotate(-0.5deg);
+	}
+	95%,
+	100% {
+		transform: scale(1) rotate(0);
+	}
+}
+
+.comment {
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.comment.show {
+	opacity: 1;
+	animation: tada 0.8s forwards ease-in-out;
+	transform-origin: center;
 }

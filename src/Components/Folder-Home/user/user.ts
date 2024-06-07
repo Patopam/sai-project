@@ -1,3 +1,5 @@
+import { addObserver, appState, dispatch } from '../../../store/store';
+import { navigate } from '../../../store/actions';
 import Styles from './user.css';
 export enum Attribute {
 	'image' = 'image',
@@ -17,6 +19,7 @@ class user extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this);
 	}
 
 	static get observedAttributes() {
@@ -32,6 +35,10 @@ class user extends HTMLElement {
 	}
 
 	connectedCallback() {
+		const ChangeHome = this.shadowRoot?.querySelector('#myProfile');
+		ChangeHome?.addEventListener('click', () => {
+			dispatch(navigate('Trend'));
+		});
 		this.render();
 	}
 
@@ -54,11 +61,11 @@ class user extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
-			
+
 			const css = this.ownerDocument.createElement('style');
 			css.innerHTML = Styles;
 			this.shadowRoot?.appendChild(css);
-			
+
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
 			<section class= "user">
@@ -76,7 +83,9 @@ class user extends HTMLElement {
 						<h1>${this.followers}</h1>
 						<h2>Followers</h2>
 						</div>
-						<nav class="myProfile">My Profle</nav>
+						<div class="myProfile">
+					<button id="myprofil">My profile</button>
+				</div>
 
 						</section>
 

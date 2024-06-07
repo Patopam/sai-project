@@ -1,9 +1,15 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, collection, addDoc, getDocs, query, where, onSnapshot } from 'firebase/firestore';
+import {
+	getAuth,
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+	signOut,
+	onAuthStateChanged,
+} from 'firebase/auth';
 import { users } from '../types/users-sign';
 import { imgs } from '../types/img-post';
-import { doc, onSnapshot } from 'firebase/firestore';
+import { doc } from 'firebase/firestore';
 
 export const firebaseConfig = {
 	apiKey: 'AIzaSyDgAJvGH4dhqzoRVxqP7xB48nCS9HspO4g',
@@ -18,6 +24,8 @@ export const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 const auth = getAuth(app);
+
+//signin//
 
 export const createUser = async (
 	email: string,
@@ -52,6 +60,72 @@ export const createUser = async (
 		}
 	}
 };
+
+//login//
+
+export const signInUser = async (email: string, password: string) => {
+	try {
+		const userCredential = await signInWithEmailAndPassword(auth, email, password);
+		const user = userCredential.user;
+
+		const querySnapshot = await getDocs(query(collection(db, 'users2'), where('uid', '==', user.uid)));
+		if (querySnapshot.empty) {
+			throw new Error('User not found in Firestore');
+		}
+		console.log('User signed in: ', user.uid);
+		return user; // Asegúrate de retornar el usuario si la autenticación es exitosa
+	} catch (error: unknown) {
+		if (error instanceof Error) {
+			const errorCode = (error as any).code;
+			const errorMessage = error.message;
+			console.error('Error signing in user: ', errorCode, errorMessage);
+			throw error; // Vuelve a lanzar el error para que pueda ser capturado en el componente
+		} else {
+			console.error('Unknown error', error);
+			throw new Error('Unknown error');
+		}
+	}
+};
+
+//signout//
+
+export const signOutUser = async () => {
+	try {
+		await signOut(auth);
+		console.log('User signed out successfully');
+	} catch (error: unknown) {
+		if (error instanceof Error) {
+			const errorCode = (error as any).code;
+			const errorMessage = error.message;
+			console.error('Error signing out user: ', errorCode, errorMessage);
+			throw error;
+		} else {
+			console.error('Unknown error', error);
+			throw new Error('Unknown error');
+		}
+	}
+};
+
+// Obtener la información del usuario autenticado
+export const getCurrentUser = () => {
+	return new Promise((resolve, reject) => {
+		onAuthStateChanged(auth, async (user) => {
+			if (user) {
+				const querySnapshot = await getDocs(query(collection(db, 'users2'), where('uid', '==', user.uid)));
+				if (!querySnapshot.empty) {
+					const userData = querySnapshot.docs[0].data();
+					resolve(userData);
+				} else {
+					reject('User not found in Firestore');
+				}
+			} else {
+				reject('No user is signed in');
+			}
+		});
+	});
+};
+
+//data//
 
 export const addUser = async (formData: Omit<users, 'id'>) => {
 	try {
