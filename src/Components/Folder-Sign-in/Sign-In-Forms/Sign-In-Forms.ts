@@ -1,78 +1,106 @@
 import Styles from './Sign-In-Forms.css';
 import { users } from '../../../types/users-sign';
-import { adduser } from '../../../services/firebase';
+import { createUser } from '../../../services/firebase';
+import { addObserver, appState, dispatch } from '../../../store/store';
+import { navigate } from '../../../store/actions';
+
 const formData: Omit<users, 'id'> = {
 	name: '',
 	username: '',
 	email: '',
-	passoword: '',
-	confirmpass: '',
+	password: '',
+	confirmPass: '',
 };
+
 class Forms extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this);
 	}
 
 	connectedCallback() {
 		this.render();
-		const Change1 = this.shadowRoot?.querySelector('#changeFomrs1');
-		Change1?.addEventListener('change', this.chageName)
-		const Change2 = this.shadowRoot?.querySelector('#changeFomrs2');
-		Change2?.addEventListener('change', this.chageUsername)
-		const Change3 = this.shadowRoot?.querySelector('#changeFomrs3');
-		Change3?.addEventListener('change', this.chageEmail)
-		const Change4 = this.shadowRoot?.querySelector('#changeFomrs4');
-		Change4?.addEventListener('change', this.chagePassword)
-		const Change5 = this.shadowRoot?.querySelector('#changeFomrs5');
-		Change5?.addEventListener('change', this.chageConfirmPass)
-		const save = this.shadowRoot?.querySelector('custom-singbutton');
-		save?.addEventListener('click', this.submitform)
+		const changeName = this.shadowRoot?.querySelector('#changeForms1');
+		changeName?.addEventListener('change', this.changeName.bind(this));
+
+		const changeUsername = this.shadowRoot?.querySelector('#changeForms2');
+		changeUsername?.addEventListener('change', this.changeUsername.bind(this));
+
+		const changeEmail = this.shadowRoot?.querySelector('#changeForms3');
+		changeEmail?.addEventListener('change', this.changeEmail.bind(this));
+
+		const changePassword = this.shadowRoot?.querySelector('#changeForms4');
+		changePassword?.addEventListener('change', this.changePassword.bind(this));
+
+		const changeConfirmPass = this.shadowRoot?.querySelector('#changeForms5');
+		changeConfirmPass?.addEventListener('change', this.changeConfirmPass.bind(this));
+
+		const save = this.shadowRoot?.querySelector('#form');
+		save?.addEventListener('submit', this.submitForm.bind(this));
+
+		const save2 = this.shadowRoot?.querySelector('#form');
+		save2?.addEventListener('submit', function(event) {
+			event.preventDefault();
+			dispatch(navigate('Home'));
+		})
+
 	}
-	chageName(e: any){	
-		
+
+	changeName(e: any) {
 		formData.name = e?.target?.value;
-	}	
-	chageUsername(e: any){
-	
+	}
+
+	changeUsername(e: any) {
 		formData.username = e?.target?.value;
 	}
-	chageEmail(e: any){
-		;
+
+	changeEmail(e: any) {
 		formData.email = e?.target?.value;
 	}
-	chagePassword(e: any){
-		
-		formData.passoword = e?.target?.value;
-	}	
-	chageConfirmPass(e: any){
-		
-		formData.confirmpass = e?.target?.value;
-	}			
-	submitform(){
-		adduser(formData)
+
+	changePassword(e: any) {
+		formData.password = e?.target?.value;
+	}
+
+	changeConfirmPass(e: any) {
+		formData.confirmPass = e?.target?.value;
+	}
+
+	async submitForm() {
+		try {
+			await createUser(formData.email, formData.password, formData.name, formData.username, formData.confirmPass);
+			console.log('User registered successfully');
+		} catch (error) {
+			console.error('Error registering user: ', error);
+		}
 	}
 
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
-			
+
 			const css = this.ownerDocument.createElement('style');
 			css.innerHTML = Styles;
 			this.shadowRoot?.appendChild(css);
-		
+
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
 
 			<section>
-			<div class="box-Forms">
-				<input id="changeFomrs1" class="Forms" type="text" name="Name"  placeholder="Name">
-                <input id="changeFomrs2" class="Forms" type="text" name="Username"  placeholder="Username">
-                <input id="changeFomrs3" class="Forms" type="email" name="Email"  placeholder="Email">
-                <input id="changeFomrs4" class="Forms" type="Passaword" name="Passaword"  placeholder="Passaword">
-                <input id="changeFomrs5" class="Forms" type="Passaword" name="Passaword"  placeholder="Confirm Passaword">
-			</div>
-				<custom-singbutton></custom-singbutton>
+				<form id="form">
+					<div class="box-Forms">
+						<input id="changeForms1" class="Forms" type="text" name="Name" placeholder="Name" required>
+						<input id="changeForms2" class="Forms" type="text" name="Username" placeholder="Username" required>
+						<input id="changeForms3" class="Forms" type="email" name="Email" placeholder="Email" required>
+						<input id="changeForms4" class="Forms" type="password" name="Password" placeholder="Password" required>
+						<input id="changeForms5" class="Forms" type="password" name="ConfirmPassword" placeholder="Confirm Password" required>
+						<button id="changeHome" class="Button-Continue" type="submit" >Continue</button>
+
+					</div>
+				
+					<custom-singbutton></custom-singbutton>
+				</form>
 			</section>
 			`;
 		}

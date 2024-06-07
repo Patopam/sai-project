@@ -1,9 +1,10 @@
-import '../Components/indexP';
-import MyUser, { Attribute3 } from '../Components/Config/config-user/config-user';
-import { UserData } from '../data//data';
-import Myhead, { Attribute6 } from '../Components/Config/head/head';
+import './Components/indexP';
+import MyUser, { Attribute3 } from '../Components/Folder-My profile/user2/user2';
+import { UserData } from '../data/data';
+import stylesA from './styleA.css';
+import Myhead, { Attribute6 } from '../Components/Folder-My profile/head/head';
 
-class AppUser extends HTMLElement {
+class AppMyProfile extends HTMLElement {
 	users: MyUser[] = [];
 	currentUserIndex: number = 0;
 	heade: Myhead[] = [];
@@ -36,7 +37,7 @@ class AppUser extends HTMLElement {
 			this.shadowRoot.innerHTML = `
 
                 <custom-backed></custom-backed>
-                <custom-heade></custom-heade>
+                <custom-head></custom-head>
             `;
 
 			const ContenedorUser = this.ownerDocument.createElement('div');
@@ -56,4 +57,4 @@ class AppUser extends HTMLElement {
 	}
 }
 
-customElements.define('app-user', AppUser);
+customElements.define('app-profile', AppMyProfile);

@@ -1,10 +1,14 @@
 import '../Components/indexP';
 import { trendData } from '../data/trendsData';
+import { UserData } from '../data/data';
 import Mytag, { AttributeTa } from '../Components/Folder-Tags/tags/tags';
 import stylesB from './trend.css';
+import Myhead, { Attribute6 } from '../Components/Folder-Tags/head/head';
 
 class AppTrend extends HTMLElement {
 	tags: Mytag[] = [];
+	headexplore: Myhead[] = [];
+	currentUserIndex: number = 0;
 
 	constructor() {
 		super();
@@ -18,6 +22,13 @@ class AppTrend extends HTMLElement {
 			tagCard.setAttribute(AttributeTa.trend, tag.trend);
 			this.tags.push(tagCard);
 		});
+
+		UserData.forEach((headexplore) => {
+			const headcard = this.ownerDocument.createElement('custom-headexplore') as Myhead;
+			headcard.setAttribute(Attribute6.image, headexplore.image);
+			headcard.setAttribute(Attribute6.username, headexplore.username);
+			this.headexplore.push(headcard);
+		});
 		this.render();
 	}
 
@@ -30,7 +41,7 @@ class AppTrend extends HTMLElement {
 		</style>
 			<custom-back></custom-back>
 			<custom-headexplore></custom-headexplore>
-
+			<nav-app></nav-app>
 
 			`;
 
@@ -40,6 +51,8 @@ class AppTrend extends HTMLElement {
 				ContenedorTag?.appendChild(tag);
 			});
 			this.shadowRoot?.appendChild(ContenedorTag);
+
+			this.shadowRoot.appendChild(this.headexplore[this.currentUserIndex]);
 		}
 	}
 }

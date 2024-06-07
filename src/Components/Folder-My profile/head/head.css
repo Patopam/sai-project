@@ -44,7 +44,7 @@ button {
 	background-color: #d9d9d9;
 	border-radius: 20px;
 	height: 30px;
-	width: 80px;
+	width: 92px;
 	display: flex;
 	align-items: center;
 }
@@ -132,7 +132,7 @@ p {
 @media (max-width: 400px) {
 	.bxs-cog {
 		position: absolute;
-		left: 1%;
+		left: 50%;
 		display: flex;
 		top: 25%;
 	}

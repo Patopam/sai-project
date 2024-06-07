@@ -2,9 +2,12 @@ import '../Components/indexP';
 import { UserData } from '../data/data';
 import Myfollower, { Attribute3 } from '../Components/Folder-Followers/follows/follows';
 import stylesA from './followers.css';
+import Myhead, { Attribute6 } from '../Components/Folder-Tags/head/head';
 
 class AppFollow extends HTMLElement {
 	follows: Myfollower[] = [];
+	headexplore: Myhead[] = [];
+	currentUserIndex: number = 0;
 
 	constructor() {
 		super();
@@ -19,6 +22,12 @@ class AppFollow extends HTMLElement {
 			followsCard.setAttribute(Attribute3.name, follo.name);
 			this.follows.push(followsCard);
 		});
+		UserData.forEach((headexplore) => {
+			const headcard = this.ownerDocument.createElement('custom-headexplore') as Myhead;
+			headcard.setAttribute(Attribute6.image, headexplore.image);
+			headcard.setAttribute(Attribute6.username, headexplore.username);
+			this.headexplore.push(headcard);
+		});
 		this.render();
 	}
 
@@ -30,8 +39,7 @@ class AppFollow extends HTMLElement {
 			${stylesA}
 		</style>
 			<custom-backi></custom-backi>
-			<custom-head></custom-head>
-
+			<nav-app></nav-app>
 
 			`;
 			const ContenedorFollo = this.ownerDocument.createElement('section');
@@ -40,6 +48,7 @@ class AppFollow extends HTMLElement {
 				ContenedorFollo?.appendChild(follo);
 			});
 			this.shadowRoot?.appendChild(ContenedorFollo);
+			this.shadowRoot.appendChild(this.headexplore[this.currentUserIndex]);
 		}
 	}
 }

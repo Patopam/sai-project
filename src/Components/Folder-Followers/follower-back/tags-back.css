@@ -1,37 +1,54 @@
 .title2 {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between; /* Alinea los elementos al inicio y al final */
 	align-items: center;
 	margin-top: 8%;
 	margin-bottom: 9%;
 	margin-left: 25%;
 	width: 1000px;
-
+	height: auto;
 	background-color: #25245e; /* Color de fondo del cuadro */
 	padding: 20px; /* Espaciado interno del cuadro */
 	border-radius: 10px; /* Borde redondeado del cuadro */
 }
+
 @media (max-width: 800px) {
 	.title2 {
-		margin-top: 4%;
-		margin-bottom: 4%;
-		margin-left: 10%;
-		width: 590px;
-		flex-direction: row;
-		flex-wrap: wrap;
+		top: 80px;
+		margin-left: 8%;
+		width: 100%;
+		max-width: 640px;
+		height: 2240px;
+		padding: 20px 10px;
+		position: relative;
+	}
+
+	.title2 h1 {
+		text-align: center;
+		font-size: 20px;
+	}
+
+	.go {
+		align-self: flex-end;
+		align-self: center; /* Centra el botón verticalmente */
 	}
 }
 
 @media (max-width: 400px) {
 	.title2 {
-		margin-top: 4%;
-		margin-bottom: 4%;
-		margin-left: 10%;
-		width: 350px;
+		display: none;
+	}
+
+	.title2 h1 {
+		font-size: 20px;
+		margin-bottom: 20px; /* Espaciado inferior entre el título y el botón */
+	}
+
+	.go {
+		align-self: center; /* Centra el botón verticalmente */
 	}
 }
-
 .title2 h1 {
 	color: #fff;
 	font-family: Satoshi;
