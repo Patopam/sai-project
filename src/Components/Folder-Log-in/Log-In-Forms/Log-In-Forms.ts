@@ -77,4 +77,6 @@ class Forms extends HTMLElement {
 }
 
 customElements.define('custom-formsl', Forms);
+
 export default Forms;
+

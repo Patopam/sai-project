@@ -8,8 +8,9 @@ import MyTrend, { Attribute4 } from '../Components/Folder-Home/Folder-Trends/tre
 import MyWelcome, { Attribute5 } from '../Components/Folder-Home/Folder-Welcome/welcome/welcome';
 import stylesA from './home.css';
 import user from '../Components/Folder-Home/user/user';
-import { getPost } from '../services/firebase';
+import { getPost, getpostsListener } from '../services/firebase';
 import Myhead, { Attribute6 } from '../Components/Folder-Home/head/head';
+import { addObserver, appState, dispatch } from '../store/store';
 
 class AppContainer extends HTMLElement {
 	users: MyUser[] = [];
@@ -30,6 +31,7 @@ class AppContainer extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this)
 	}
 
 	async connectedCallback() {
@@ -49,15 +51,18 @@ class AppContainer extends HTMLElement {
 			UserCard.setAttribute(Attribute.followers, String(user.followers));
 			this.users.push(UserCard);
 		});
-		const data = await getPost();
-		console.log(data);
-		data.forEach((feed) => {
-			const FeedCard = this.ownerDocument.createElement('custom-feed') as MyFeed;
-			FeedCard.setAttribute(Attribute2.image, feed.avatarImg);
-			FeedCard.setAttribute(Attribute2.username, feed.user);
-			FeedCard.setAttribute(Attribute2.postimage, feed.link);
-			this.feeds.push(FeedCard);
-		});
+		// const data = await getPost();
+		// console.log(data);
+		// data.forEach((feed) => {
+		// 	const FeedCard = this.ownerDocument.createElement('custom-feed') as MyFeed;
+		// 	FeedCard.setAttribute(Attribute2.image, feed.avatarImg);
+		// 	FeedCard.setAttribute(Attribute2.username, feed.user);
+		// 	FeedCard.setAttribute(Attribute2.postimage, feed.link);
+		// 	this.feeds.push(FeedCard);
+		// });
+
+		
+		
 
 		UserData.forEach((follower) => {
 			const followerCard = this.ownerDocument.createElement('custom-followers') as Myfollower;
@@ -79,6 +84,8 @@ class AppContainer extends HTMLElement {
 			headcard.setAttribute(Attribute6.username, head.username);
 			this.head.push(headcard);
 		});
+
+		
 		this.render();
 	}
 
@@ -106,10 +113,22 @@ class AppContainer extends HTMLElement {
 
 			const ContenedorFeed = this.ownerDocument.createElement('section');
 			ContenedorFeed.className = 'contenedorfeed';
-			this.feeds.forEach((feed) => {
-				ContenedorFeed?.appendChild(feed);
-			});
 			this.shadowRoot?.appendChild(ContenedorFeed);
+			getpostsListener((post) => {
+				while (ContenedorFeed.firstChild){
+					ContenedorFeed.removeChild(ContenedorFeed.firstChild)
+				}
+				post.forEach((p) => {
+					const FeedCard = this.ownerDocument.createElement('custom-feed') as MyFeed;
+					 FeedCard.setAttribute(Attribute2.image, p.avatarImg);
+					 FeedCard.setAttribute(Attribute2.username, p.user);
+					FeedCard.setAttribute(Attribute2.postimage, p.link);
+					 this.feeds.push(FeedCard);
+					 ContenedorFeed.prepend(FeedCard)
+				});
+	
+			});
+			
 
 			const ContenedorTrends = this.ownerDocument.createElement('div');
 			ContenedorTrends.className = 'contenedortrend';

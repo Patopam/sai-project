@@ -4,7 +4,7 @@ import { Observers } from '../types/store';
 
 export let emptyState = {
 	screen: 'SignIn',
-	imgs: [],
+	post: [],
 };
 
 export let appState = storage.get({key:PersistanceKeys.STORE, defaultValue: emptyState});

@@ -46,20 +46,20 @@ img {
 	line-height: 18.9px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 	img {
-		top: 12%;
+		top: 13%;
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 	.top h1 {
-		top: 25%;
+		top: 26%;
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 	.top h2 {
-		top: 32%;
+		top: 33%;
 	}
 }

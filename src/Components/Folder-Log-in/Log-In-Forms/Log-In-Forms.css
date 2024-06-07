@@ -18,6 +18,8 @@
 	border-radius: 5px;
 	font-size: 18px;
 	color: #d9d9d9;
+
+
 }
 
 .Button-Continue {
@@ -28,6 +30,7 @@
 	margin-top: 10px;
 	font-size: 20px;
 	font-family: Satoshi;
+
 	border: transparent;
 }
 
@@ -41,6 +44,7 @@
 	font-family: Satoshi;
 	font-size: 18px;
 	border-color: transparent;
+
 }
 
 @media (max-width: 400px) {
@@ -55,19 +59,4 @@
 	text-align: center;
 	display: block;
 	width: 100%;
-}
-
-@media (max-width: 400px) {
-	.box-Forms {
-		margin-left: 15px;
-		margin-top: 10%;
-	}
-
-	.box-Forms h1 {
-		left: 10px;
-	}
-
-	.Forms {
-		width: 310px;
-	}
 }

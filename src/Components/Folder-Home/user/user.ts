@@ -9,7 +9,7 @@ export enum Attribute {
 	'following' = 'following',
 }
 
-class user extends HTMLElement {
+class User extends HTMLElement {
 	name?: string;
 	image?: string;
 	username?: string;
@@ -20,6 +20,7 @@ class user extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 		addObserver(this);
+		this.handleFormChange = this.handleFormChange.bind(this);
 	}
 
 	static get observedAttributes() {
@@ -35,10 +36,37 @@ class user extends HTMLElement {
 	}
 
 	connectedCallback() {
+		this.loadUserData();
+		this.render();
+		window.addEventListener('form-change', this.handleFormChange as EventListener);
+
 		const ChangeHome = this.shadowRoot?.querySelector('#myProfile');
 		ChangeHome?.addEventListener('click', () => {
-			dispatch(navigate('Trend'));
+			dispatch(navigate('User'));
 		});
+	}
+
+	disconnectedCallback() {
+		window.removeEventListener('form-change', this.handleFormChange as EventListener);
+	}
+
+	handleFormChange(event: Event) {
+		const customEvent = event as CustomEvent;
+		const { name, value } = customEvent.detail;
+		if (name === 'name' || name === 'username' || name === 'image') {
+			this.setAttribute(name, value);
+			this.saveToLocalStorage(name, value);
+		}
+	}
+
+	saveToLocalStorage(name: string, value: string) {
+		localStorage.setItem(name, value);
+	}
+
+	loadUserData() {
+		this.image = localStorage.getItem('image') || '';
+		this.username = localStorage.getItem('username') || 'shine'; // Valor predeterminado 'shine'
+		this.name = localStorage.getItem('name') || 'sofia'; // Valor predeterminado 'sofia'
 		this.render();
 	}
 
@@ -50,7 +78,6 @@ class user extends HTMLElement {
 			case Attribute.followers:
 				this.followers = newValue ? Number(newValue) : undefined;
 				break;
-
 			default:
 				this[propName] = newValue;
 				break;
@@ -68,32 +95,30 @@ class user extends HTMLElement {
 
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
-			<section class= "user">
-      			<div class="top">
-      			<img src="${this.image}"></img>
-      			<h1>${this.name}</h1>
-      			<h2>${this.username}</h2>
-      			</div>
-						<section class="bottom">
-						<div class="following">
+			<section class="user">
+				<div class="top">
+					<img src="${this.image}" alt="User Image"></img>
+					<h1>${this.name}</h1>
+					<h2>${this.username}</h2>
+				</div>
+				<section class="bottom">
+					<div class="following">
 						<h1>${this.following}</h1>
 						<h2>Following</h2>
-						</div>
-						<div class="follower">
+					</div>
+					<div class="follower">
 						<h1>${this.followers}</h1>
 						<h2>Followers</h2>
-						</div>
-						<div class="myProfile">
-					<button id="myprofil">My profile</button>
-				</div>
-
-						</section>
-
-            </section>
-            `;
+					</div>
+					<div class="myProfile">
+						<button id="myProfile">My profile</button>
+					</div>
+				</section>
+			</section>
+			`;
 		}
 	}
 }
 
-customElements.define('custom-user', user);
-export default user;
+customElements.define('custom-user', User);
+export default User;

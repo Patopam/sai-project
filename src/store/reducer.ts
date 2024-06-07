@@ -6,6 +6,10 @@ export const reducer = (currentAction: any, currentState: any) => {
         case 'navigate':
             currentState.screen = payload;
             break;
+
+            case 'getpost':
+                currentState.post = payload;
+                break;
     }
     return currentState;
 };

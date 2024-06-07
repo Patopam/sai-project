@@ -9,7 +9,8 @@ import {
 } from 'firebase/auth';
 import { users } from '../types/users-sign';
 import { imgs } from '../types/img-post';
-import { doc } from 'firebase/firestore';
+
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 
 export const firebaseConfig = {
@@ -131,6 +132,8 @@ export const getCurrentUser = () => {
 =======
 const storage = getStorage();
 
+//signin//
+
 export const createUser = async (
 	email: string,
 	password: string,
@@ -163,6 +166,69 @@ export const createUser = async (
 			console.error('Unknown error', error);
 		}
 	}
+};
+//login//
+
+export const signInUser = async (email: string, password: string) => {
+	try {
+		const userCredential = await signInWithEmailAndPassword(auth, email, password);
+		const user = userCredential.user;
+
+		const querySnapshot = await getDocs(query(collection(db, 'users2'), where('uid', '==', user.uid)));
+		if (querySnapshot.empty) {
+			throw new Error('User not found in Firestore');
+		}
+		console.log('User signed in: ', user.uid);
+		return user; // Asegúrate de retornar el usuario si la autenticación es exitosa
+	} catch (error: unknown) {
+		if (error instanceof Error) {
+			const errorCode = (error as any).code;
+			const errorMessage = error.message;
+			console.error('Error signing in user: ', errorCode, errorMessage);
+			throw error; // Vuelve a lanzar el error para que pueda ser capturado en el componente
+		} else {
+			console.error('Unknown error', error);
+			throw new Error('Unknown error');
+		}
+	}
+};
+
+//signout//
+
+export const signOutUser = async () => {
+	try {
+		await signOut(auth);
+		console.log('User signed out successfully');
+	} catch (error: unknown) {
+		if (error instanceof Error) {
+			const errorCode = (error as any).code;
+			const errorMessage = error.message;
+			console.error('Error signing out user: ', errorCode, errorMessage);
+			throw error;
+		} else {
+			console.error('Unknown error', error);
+			throw new Error('Unknown error');
+		}
+	}
+};
+
+// Obtener la información del usuario autenticado
+export const getCurrentUser = () => {
+	return new Promise((resolve, reject) => {
+		onAuthStateChanged(auth, async (user) => {
+			if (user) {
+				const querySnapshot = await getDocs(query(collection(db, 'users2'), where('uid', '==', user.uid)));
+				if (!querySnapshot.empty) {
+					const userData = querySnapshot.docs[0].data();
+					resolve(userData);
+				} else {
+					reject('User not found in Firestore');
+				}
+			} else {
+				reject('No user is signed in');
+			}
+		});
+	});
 };
 
 export const addUser = async (formData: Omit<users, 'id'>) => {
@@ -198,6 +264,35 @@ export const getPost = async () => {
 	return arrayPost;
 };
 
-export const listenParts = () => {
-	onSnapshot;
+
+export const uploadfile = async (file: File) => {
+	const storageRef = ref(storage, 'imagesPost/' + file.name);
+	uploadBytes(storageRef, file).then((snapshot) => {
+		localStorage.setItem('imagesPost', file.name);
+		console.log('Uploaded a blob or file!');
+	});
 };
+
+export const getfile = async () => {
+	const routeName = localStorage.getItem('imagesPost');
+	const storageRef = ref(storage, 'imagesPost/' + routeName);
+	const urlImg = await getDownloadURL(ref(storageRef))
+		.then((url) => {
+			return url;
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+	return urlImg;
+};
+
+export const getpostsListener = (cb: (docs: imgs[]) => void) => {
+	const ref = collection(db, 'posts');
+	onSnapshot(ref, (collection) => {
+		const docs: imgs[] = collection.docs.map((doc) => ({
+			id: doc.id,
+			...doc.data(),
+		})) as imgs[];
+		cb(docs);
+	});
+

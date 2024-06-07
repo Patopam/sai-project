@@ -28,6 +28,10 @@ class NavApp extends HTMLElement {
 		Changefollo?.addEventListener('click', () => {
 			dispatch(navigate('Follow'));
 		});
+		const Changeuser = this.shadowRoot?.querySelector('#user');
+		Changeuser?.addEventListener('click', () => {
+			dispatch(navigate('User'));
+		});
 	}
 
 
@@ -58,7 +62,7 @@ class NavApp extends HTMLElement {
                         <button id="shownf" class="Box-boton4"><i class='bx bx-user-plus bx-md' style='color:#ffffff'  ></i></button>
                     </div>
                     <div class="user">
-                        <button class="Box-boton5"><i class='bx bx-user-circle bx-md' style='color:#ffffff' ></i></button>
+                        <button id="user" class="Box-boton5"><i class='bx bx-user-circle bx-md' style='color:#ffffff' ></i></button>
                     </div>
                 </div>
            </div>

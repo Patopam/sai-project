@@ -25,6 +25,13 @@ class ConfBack extends HTMLElement {
 			const auth = getAuth();
 			await signOut(auth);
 			console.log('User signed out successfully');
+
+
+			// Establecer los valores deseados en los atributos del componente
+			this.setAttribute('name', 'sofia');
+			this.setAttribute('username', 'shine');
+
+
 			dispatch(navigate('LogIn'));
 		} catch (error) {
 			console.error('Error signing out: ', error);

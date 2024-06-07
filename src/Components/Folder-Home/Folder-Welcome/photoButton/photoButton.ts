@@ -21,19 +21,21 @@ class PhotoButton extends HTMLElement {
 
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
-			<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-        <div class="box">
-        <button class="button">Photo</button>
-      </div>
+
+
+			<div class="box">
+        		<button class="button">
+		
+          		<div class="overlap-group">
+            		<div class="text-wrapper">Photo</div>
+           		<div class="rectangle"></div>
+          	</div>
+		  
+        		</button>
+      			</div>
+
 			`;
-		 const input = this.ownerDocument.createElement('input');
-		 input.className= 'hola'
-		 input.type = 'file';
-		 input.addEventListener('change', () => {
-		 	const file = input.files?.[0];
-			if (file) uploadfile(file);
-		 })
-		 this.shadowRoot?.appendChild(input)
+		
 		}
 	}
 }
