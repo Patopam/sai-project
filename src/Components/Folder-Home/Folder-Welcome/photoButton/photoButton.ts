@@ -22,6 +22,7 @@ class PhotoButton extends HTMLElement {
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
 
+
 			<div class="box">
         		<button class="button">
 		
@@ -32,6 +33,7 @@ class PhotoButton extends HTMLElement {
 		  
         		</button>
       			</div>
+
 			`;
 		
 		}

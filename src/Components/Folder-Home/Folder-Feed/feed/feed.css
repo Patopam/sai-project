@@ -109,6 +109,8 @@ body.popup-open::after {
 .comment {
 	position: absolute;
 	left: 30%;
+
+
 	color: #fff;
 	font-family: 'Satoshi';
 	font-style: normal;
@@ -175,4 +177,6 @@ body.popup-open::after {
 	opacity: 1;
 	animation: tada 0.8s forwards ease-in-out;
 	transform-origin: center;
+
 }
+

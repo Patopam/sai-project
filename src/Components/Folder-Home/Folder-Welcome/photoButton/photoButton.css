@@ -12,11 +12,13 @@
 	line-height: normal;
 }
 
-button {
+.box .button {
 	all: unset;
 	box-sizing: border-box;
 	position: relative;
+
 	width: 200px;
+
 	height: 31px;
 	border-radius: 40px;
 	border: 1px solid;
@@ -24,8 +26,10 @@ button {
 	transition: background-color 0.3s; /* Agrega transición para suavizar el cambio de color */
 	display: flex;
 	align-items: center;
+
 	justify-content: center;
 }
+
 .box .button:active {
 	background-color: #7796f1; /* Cambia el color cuando se presiona el botón */
 }
