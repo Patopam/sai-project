@@ -20,7 +20,7 @@ class AppContainer extends HTMLElement {
 	}
 	async render() {
 		if (this.shadowRoot) this.shadowRoot.innerHTML = '';
-		switch (appState.screen) {
+		switch ((appState as { screen: string }).screen) {
 			case 'SignIn':
 				const SignIn = this.ownerDocument.createElement('app-signin');
 				this.shadowRoot?.appendChild(SignIn);

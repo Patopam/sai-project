@@ -13,10 +13,7 @@ class SingButton extends HTMLElement {
 	connectedCallback() {
 		this.render();
 
-		// const ChangeHome = this.shadowRoot?.querySelector('#changeHome');
-		// ChangeHome?.addEventListener('click', () => {
-		// 	dispatch(navigate('Home'));
-		// });
+	
 		const changeLogIn = this.shadowRoot?.querySelector('#changeLogIn');
 		changeLogIn?.addEventListener('click', () => {
 			dispatch(navigate('LogIn'));
@@ -38,7 +35,7 @@ class SingButton extends HTMLElement {
 			<section>
 
 
-		
+			
 				<div class="Box-LogIn">
 					<p>Already have an occount?</p>
 					<button id="changeLogIn" class="Button-LogIn">Log in</button>
