@@ -7,5 +7,5 @@ export const reducer = (currentAction: any, currentState: any) => {
             currentState.screen = payload;
             break;
     }
-    return currentState
+    return currentState;
 };

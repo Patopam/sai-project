@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { users } from '../types/users-sign';
 import { imgs } from '../types/img-post';
 import { doc, onSnapshot } from 'firebase/firestore';
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export const firebaseConfig = {
 	apiKey: 'AIzaSyDgAJvGH4dhqzoRVxqP7xB48nCS9HspO4g',
@@ -18,6 +19,7 @@ export const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 const auth = getAuth(app);
+const storage = getStorage();
 
 export const createUser = async (
 	email: string,
@@ -86,6 +88,32 @@ export const getPost = async () => {
 	return arrayPost;
 };
 
-export const listenParts = () => {
-	onSnapshot;
+
+export const  uploadfile = async (file: File) => {
+	const storageRef = ref(storage, 'imagesPost/' + file.name);
+	uploadBytes(storageRef, file).then((snapshot) => {
+		localStorage.setItem('imagesPost', file.name)
+		console.log('Uploaded a blob or file!');
+	  });
+}
+
+export const  getfile = async () => {
+	const routeName = localStorage.getItem('imagesPost')
+	const storageRef = ref(storage, 'imagesPost/' + routeName);
+	const urlImg = await getDownloadURL(ref(storageRef))
+  .then((url) => {
+  
+  	return url;
+  })
+  .catch((error) => {
+   	console.log(error)
+  });
+  return urlImg;
+}
+
+export const getpostsListener = () => {
+	const ref = collection(db, 'posts');
+	onSnapshot(ref, (collection) => {
+		 
+	})
 };

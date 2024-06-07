@@ -7,7 +7,6 @@ export { default as trends } from './Folder-Home/Folder-Trends/trends/trend';
 export { default as trending } from './Folder-Home/Folder-Trends/trending/trending';
 export { default as welcome } from './Folder-Home/Folder-Welcome/welcome/welcome';
 export { default as PhotoButton } from './Folder-Home/Folder-Welcome/photoButton/photoButton';
-export { default as VideoButton } from './Folder-Home/Folder-Welcome/videoButton/videoButton';
 export { default as folloButton } from './Folder-Home/Folder-Followers/folloButton/folloButton';
 export { default as head } from './Folder-Home/head/head';
 export { default as likeButton } from './Folder-Home/Folder-Feed/likeButton/likeButton';
