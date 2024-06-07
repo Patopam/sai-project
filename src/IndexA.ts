@@ -18,7 +18,7 @@ class AppContainer extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
-	render() {
+	async render() {
 		if (this.shadowRoot) this.shadowRoot.innerHTML = '';
 		switch (appState.screen) {
 			case 'SignIn':

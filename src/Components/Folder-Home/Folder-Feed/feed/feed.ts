@@ -1,5 +1,5 @@
 import Styles from './feed.css';
-import { getpost } from '../../../../services/firebase';
+import { getPost } from '../../../../services/firebase';
 import { imgs } from '../../../../types/img-post';
 
 export enum Attribute2 {

@@ -1,6 +1,6 @@
 import { imgs } from '../../../../types/img-post';
 import Styles from './welcome.css';
-import { addpost } from '../../../../services/firebase';
+import { addPost } from '../../../../services/firebase';
 export enum Attribute5 {
 	'image' = 'image',
 }
@@ -41,7 +41,7 @@ class welcome extends HTMLElement {
 	}
 
 	submitform() {
-		addpost(formDataImg);
+		addPost(formDataImg);
 	}
 	attributeChangedCallback(propName: Attribute5, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
