@@ -21,8 +21,10 @@ class PhotoButton extends HTMLElement {
 
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
-
-			
+			<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+        <div class="box">
+        <button class="button">Photo</button>
+      </div>
 			`;
 		 const input = this.ownerDocument.createElement('input');
 		 input.className= 'hola'

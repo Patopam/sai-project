@@ -1,7 +1,7 @@
 import Styles from './Log-In-Button.css';
-
 import { addObserver, appState, dispatch } from '../../../store/store';
 import { navigate } from '../../../store/actions';
+
 class LogButton extends HTMLElement {
 	constructor() {
 		super();
@@ -11,7 +11,7 @@ class LogButton extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
-		
+
 		const ChangeHome = this.shadowRoot?.querySelector('#changeHome');
 		ChangeHome?.addEventListener('click', () => {
 			dispatch(navigate('Home'));
@@ -36,7 +36,6 @@ class LogButton extends HTMLElement {
 
 			<section>
 
-			<button id="changeHome" class="Button-Continue">Continue</button>
 				<div class="Box-SingIn">
 					<p>Don't have a account?</p>
 					<button id="changeSignIn" class="Button-SingIn">Sign in</button>

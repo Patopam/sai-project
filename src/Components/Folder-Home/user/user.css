@@ -140,7 +140,8 @@ img {
 	z-index: 7;
 }
 
-.myProfile button {
+.myProfile {
+
 	display: block;
 	position: relative;
 	color: #7796f1;
@@ -163,7 +164,8 @@ img {
 	transition: background-color 0.3s, color 0.3s; /* Agrega una transición para suavizar el cambio de color */
 }
 
-.myProfile button:active {
+.myProfile:active {
+
 	color: #25245e; /* Cambia el color del texto cuando se presiona */
 	background-color: #7796f1; /* Cambia el color de fondo cuando se presiona */
 }

@@ -99,12 +99,10 @@ class feed extends HTMLElement {
 		const messages = [
 			'¡Qué bonita imagen!',
 			'Me encanta esta foto',
-			'Qué momento tan especial capturado',
 			'¡Hermosa imagen!',
 			'¡Excelente composición!',
 			'Increíble captura',
 			'¡Fascinante imagen!',
-			'¡Que talento!',
 			'¡Me encanta!',
 		];
 		return messages[Math.floor(Math.random() * messages.length)];
