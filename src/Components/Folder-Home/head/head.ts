@@ -9,14 +9,15 @@ export enum Attribute6 {
 }
 
 class head extends HTMLElement {
-	image?: string
+	image?: string;
 	username?: string;
 	uid?: number;
 
 	constructor() {
-		super();	
+		super();
 		this.attachShadow({ mode: 'open' });
 		addObserver(this);
+		this.handleFormChange = this.handleFormChange.bind(this);
 	}
 
 	static get observedAttributes() {
@@ -30,11 +31,37 @@ class head extends HTMLElement {
 	}
 
 	connectedCallback() {
+		this.loadUserData();
 		this.render();
+		window.addEventListener('form-change', this.handleFormChange as EventListener);
+
 		const ChangeHome = this.shadowRoot?.querySelector('#mypro');
 		ChangeHome?.addEventListener('click', () => {
 			dispatch(navigate('User'));
 		});
+	}
+
+	disconnectedCallback() {
+		window.removeEventListener('form-change', this.handleFormChange as EventListener);
+	}
+
+	handleFormChange(event: Event) {
+		const customEvent = event as CustomEvent;
+		const { name, value } = customEvent.detail;
+		if (name === 'username' || name === 'image') {
+			this.setAttribute(name, value);
+			this.saveToLocalStorage(name, value);
+		}
+	}
+
+	saveToLocalStorage(name: string, value: string) {
+		localStorage.setItem(name, value);
+	}
+
+	loadUserData() {
+		this.image = localStorage.getItem('image') || '';
+		this.username = localStorage.getItem('username') || 'shine'; // Valor predeterminado 'shine'
+		this.render();
 	}
 
 	attributeChangedCallback(propName: Attribute6, oldValue: string | undefined, newValue: string | undefined) {
@@ -61,8 +88,7 @@ class head extends HTMLElement {
 			this.shadowRoot.innerHTML = `
 			<style> ${Styles}</style>
 
-						<href ="https://api.fontshare.com/v2/css?f[]=satoshi@500&f[]=cabinet-grotesk@800&display=swap" rel="stylesheet" />
-            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+			<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 					<div class="box-head">
                         <div class="box-logo">
                             <img src="${logosai}" alt="logosai"  draggable="false"/>
@@ -85,7 +111,7 @@ class head extends HTMLElement {
                         </div>
                         <div class="box-user">
                             <img src="${this.image}" class="perfil"></img>
-                            <p class="name">@${this.username}</p>
+                            <p class="name">${this.username}</p>
                         </div>
                         <div class="box-menu">
                             <button id="mypro"><i class='bx bxs-cog bx-spin-hover' ></i></button>

@@ -96,6 +96,7 @@ class Forms extends HTMLElement {
 						<input id="changeForms4" class="Forms" type="password" name="Password" placeholder="Password" required>
 						<input id="changeForms5" class="Forms" type="password" name="ConfirmPassword" placeholder="Confirm Password" required>
 						<button id="changeHome" class="Button-Continue" type="submit" >Continue</button>
+
 					</div>
 				
 					<custom-singbutton></custom-singbutton>

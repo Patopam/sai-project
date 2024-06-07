@@ -36,7 +36,7 @@ class LogButton extends HTMLElement {
 
 			<section>
 
-			<button id="changeHome" class="Button-Continue">Continue</button>
+		
 				<div class="Box-SingIn">
 					<p>Don't have a account?</p>
 					<button id="changeSignIn" class="Button-SingIn">Sign in</button>

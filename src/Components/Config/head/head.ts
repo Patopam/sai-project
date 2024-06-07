@@ -1,5 +1,6 @@
 import Styles from './head.css';
 import logosai from '../../../assets/Iconography - Caesarzkn.png';
+
 export enum Attribute6 {
 	'image' = 'image',
 	'username' = 'username',
@@ -27,6 +28,7 @@ class heade extends HTMLElement {
 	}
 
 	connectedCallback() {
+		this.loadUserData();
 		this.render();
 	}
 
@@ -40,6 +42,12 @@ class heade extends HTMLElement {
 				break;
 		}
 
+		this.render();
+	}
+
+	loadUserData() {
+		this.image = localStorage.getItem('image') || '';
+		this.username = localStorage.getItem('username') || 'shine'; // Valor predeterminado 'shine'
 		this.render();
 	}
 
@@ -78,7 +86,7 @@ class heade extends HTMLElement {
                         </div>
                         <div class="box-user">
                             <img src="${this.image}" class="perfil"></img>
-                            <p class="name">@${this.username}</p>
+                            <p class="name">${this.username}</p>
                         </div>
                         <div class="box-menu">
                             <button><i class='bx bxs-cog bx-spin-hover' ></i></button>

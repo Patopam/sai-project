@@ -15,7 +15,7 @@ export const UserData: DataShape[] = [
 		id: 1,
 		name: 'Sofía Rodríguez',
 		username: 'SophiArt',
-		image: 'https://i.pinimg.com/564x/20/6f/0b/206f0bad1f2f2a4db78e1cd5ba04b1cd.jpg',
+		image: 'https://i.pinimg.com/564x/4f/94/9d/4f949d2210e1fe0f62bcc404e54fda45.jpg',
 		following: 514,
 		followers: 1020,
 		postimage:'https://i.pinimg.com/736x/5d/62/56/5d6256b2311dd6e08a5a1e3b269a8c7d.jpg',
