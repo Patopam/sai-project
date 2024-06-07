@@ -1,4 +1,5 @@
 import Styles from './photoButton.css';
+import { uploadfile } from '../../../../services/firebase';
 class PhotoButton extends HTMLElement {
 	constructor() {
 		super();
@@ -7,6 +8,7 @@ class PhotoButton extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		
 	}
 
 	render() {
@@ -24,6 +26,14 @@ class PhotoButton extends HTMLElement {
         <button class="button">Photo</button>
       </div>
 			`;
+		 const input = this.ownerDocument.createElement('input');
+		 input.className= 'hola'
+		 input.type = 'file';
+		 input.addEventListener('change', () => {
+		 	const file = input.files?.[0];
+			if (file) uploadfile(file);
+		 })
+		 this.shadowRoot?.appendChild(input)
 		}
 	}
 }

@@ -11,6 +11,7 @@ import { users } from '../types/users-sign';
 import { imgs } from '../types/img-post';
 import { doc } from 'firebase/firestore';
 
+
 export const firebaseConfig = {
 	apiKey: 'AIzaSyDgAJvGH4dhqzoRVxqP7xB48nCS9HspO4g',
 	authDomain: 'sai-project-9c598.firebaseapp.com',
@@ -126,6 +127,43 @@ export const getCurrentUser = () => {
 };
 
 //data//
+
+=======
+const storage = getStorage();
+
+export const createUser = async (
+	email: string,
+	password: string,
+	name: string,
+	username: string,
+	confirmPass: string
+) => {
+	if (password !== confirmPass) {
+		throw new Error('Passwords do not match');
+	}
+
+	try {
+		const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+		const user = userCredential.user;
+
+		await addDoc(collection(db, 'users2'), {
+			uid: user.uid,
+			email: user.email,
+			name: name,
+			username: username,
+			password: password,
+		});
+		console.log('User created and added to Firestore with ID: ', user.uid);
+	} catch (error: unknown) {
+		if (error instanceof Error) {
+			const errorCode = (error as any).code;
+			const errorMessage = error.message;
+			console.error('Error creating user: ', errorCode, errorMessage);
+		} else {
+			console.error('Unknown error', error);
+		}
+	}
+};
 
 export const addUser = async (formData: Omit<users, 'id'>) => {
 	try {
