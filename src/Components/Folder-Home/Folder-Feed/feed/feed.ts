@@ -68,26 +68,42 @@ class feed extends HTMLElement {
 	}
 
 	openPopup() {
-    const popup = document.createElement('div');
-    popup.classList.add('popup');
-    popup.innerHTML = `
-      <div class="popup-content">
-        <img src="${this.postimage}" class="popup-image"></img>
-        <span class="close-popup">&times;</span>
-      </div>
+		const popup = document.createElement('div');
+		popup.classList.add('popup');
+		popup.innerHTML = `
+        <div class="popup-content">
+            <img src="${this.postimage}" class="popup-image"></img>
+            <span class="close-popup">&times;</span>
+            <p class="comment">${this.getRandomMessage()}</p>
+        </div>
     `;
-    this.shadowRoot?.appendChild(popup);
+		this.shadowRoot?.appendChild(popup);
 
-    // Agregar clase al body para el fondo oscuro y semitransparente
-    document.body.classList.add('popup-open');
+		// Agregar clase al body para el fondo oscuro y semitransparente
+		document.body.classList.add('popup-open');
 
-    const closeButton = popup.querySelector('.close-popup') as HTMLElement;
-    closeButton.addEventListener('click', () => {
-      popup.remove();
-      // Quitar la clase del body cuando se cierra el popup
-      document.body.classList.remove('popup-open');
-    });
-}
+		const closeButton = popup.querySelector('.close-popup') as HTMLElement;
+		closeButton.addEventListener('click', () => {
+			popup.remove();
+			// Quitar la clase del body cuando se cierra el popup
+			document.body.classList.remove('popup-open');
+		});
+	}
+
+	getRandomMessage() {
+		const messages = [
+			'¡Qué bonita imagen!',
+			'Me encanta esta foto',
+			'Qué momento tan especial capturado',
+			'¡Hermosa imagen!',
+			'¡Excelente composición!',
+			'Increíble captura',
+			'¡Fascinante imagen!',
+			'¡Que talento!',
+			'¡Me encanta!',
+		];
+		return messages[Math.floor(Math.random() * messages.length)];
+	}
 }
 
 customElements.define('custom-feed', feed);

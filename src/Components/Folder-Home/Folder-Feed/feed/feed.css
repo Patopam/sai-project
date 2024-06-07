@@ -38,10 +38,8 @@ p {
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 19px;
-
 	color: #ffffff;
 }
-
 .box-like {
 	width: 100%;
 	height: 25px;
@@ -51,7 +49,7 @@ custom-like {
 }
 
 /* Estilo para el fondo borroso cuando el popup está abierto */
-.body.popup-open {
+body.popup-open {
 	overflow: hidden; /* Evitar el desplazamiento de la página */
 }
 
@@ -85,16 +83,14 @@ body.popup-open::after {
 /* Estilo para el contenido del popup */
 .popup-content {
 	text-align: center;
+	position: relative; /* Añadido para posicionar el comentario */
 }
 
 /* Estilo para la imagen dentro del popup */
 .popup-image {
-	position: absolute;
-	left: 20px;
-	background-size: cover;
-	max-width: 100%;
-	height: 790px;
-	width: 700px;
+	width: 500px;
+	height: 500px;
+	object-fit: cover; /* Ajustar la imagen dentro del contenedor manteniendo la relación de aspecto */
 	border-radius: 20px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -107,4 +103,19 @@ body.popup-open::after {
 	cursor: pointer;
 	font-size: 30px;
 	color: #fff;
+}
+
+.comment {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #fff;
+	font-family: 'Satoshi';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 1.5;
+	max-width: 90%;
+	overflow-wrap: break-word;
+	text-align: center;
 }
