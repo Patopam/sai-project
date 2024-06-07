@@ -46,6 +46,7 @@ p {
 }
 custom-like {
 	margin-left: 20px;
+
 }
 
 /* Estilo para el fondo borroso cuando el popup está abierto */
@@ -173,4 +174,5 @@ body.popup-open::after {
 .comment.show {
 	opacity: 1;
 	animation: tada 0.8s;
+
 }

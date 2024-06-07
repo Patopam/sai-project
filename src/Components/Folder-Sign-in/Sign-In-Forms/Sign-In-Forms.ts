@@ -1,8 +1,10 @@
 import Styles from './Sign-In-Forms.css';
 import { users } from '../../../types/users-sign';
 import { createUser } from '../../../services/firebase';
+
 import { addObserver, appState, dispatch } from '../../../store/store';
 import { navigate } from '../../../store/actions';
+
 
 const formData: Omit<users, 'id'> = {
 	name: '',
@@ -36,6 +38,7 @@ class Forms extends HTMLElement {
 		const changeConfirmPass = this.shadowRoot?.querySelector('#changeForms5');
 		changeConfirmPass?.addEventListener('change', this.changeConfirmPass.bind(this));
 
+
 		const save = this.shadowRoot?.querySelector('#form');
 		save?.addEventListener('submit', this.submitForm.bind(this));
 
@@ -44,6 +47,7 @@ class Forms extends HTMLElement {
 			event.preventDefault();
 			dispatch(navigate('Home'));
 		})
+
 
 	}
 
@@ -88,6 +92,7 @@ class Forms extends HTMLElement {
 			<style> ${Styles}</style>
 
 			<section>
+
 				<form id="form">
 					<div class="box-Forms">
 						<input id="changeForms1" class="Forms" type="text" name="Name" placeholder="Name" required>
@@ -101,6 +106,7 @@ class Forms extends HTMLElement {
 				
 					<custom-singbutton></custom-singbutton>
 				</form>
+
 			</section>
 			`;
 		}
